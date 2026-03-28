@@ -2,9 +2,9 @@
 
 <footer class="footer-glow w-full rounded-t-[3rem] bg-[#0b1229] border-t border-white/5 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
   <div class="sadu-pattern">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-6 md:px-12 py-20 text-right max-w-screen-2xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 py-20 text-right">
       <div class="space-y-6">
-        <img src="logo.png" alt="ركال" class="h-20 w-auto" />
+        <img src="logo.png" alt="ركال" class="h-36 w-auto" />
         <p class="text-sm leading-relaxed text-white/50">شركة سعودية رائدة متخصصة في حلول التحول الرقمي والهندسة البرمجية المتقدمة. ملتزمون بتمكين رؤية المملكة ٢٠٣٠ من خلال التميز التقني.</p>
         <div class="flex gap-4 justify-end">
           <a href="#" class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-white/60 hover:bg-primary-container hover:text-on-primary-container transition-all" aria-label="الموقع"><span class="material-symbols-outlined" aria-hidden="true">public</span></a>
@@ -42,7 +42,7 @@
         </form>
       </div>
     </div>
-    <div class="border-t border-white/5 py-10 px-6 md:px-12 max-w-screen-2xl mx-auto flex flex-col md:flex-row-reverse justify-between items-center gap-6 text-xs text-white/30 uppercase tracking-widest font-bold">
+    <div class="border-t border-white/5 py-10 flex flex-col md:flex-row-reverse justify-between items-center gap-6 text-xs text-white/30 uppercase tracking-widest font-bold">
       <p>جميع الحقوق محفوظة لشركة ركال ٢٠٢٤ © المملكة العربية السعودية</p>
       <div class="flex gap-8">
         <a class="hover:text-[#00f2ff] transition-colors" href="#">الخصوصية</a>

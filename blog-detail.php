@@ -2,14 +2,14 @@
 require_once 'includes/functions.php';
 
 $slug = $_GET['slug'] ?? '';
-if (!$slug) { http_response_code(404); require_once '404.php'; exit; }
+if (!$slug) { render404(); }
 
 $db = getDB();
 $stmt = $db->prepare('SELECT * FROM blogs WHERE slug = :slug AND is_active = 1');
 $stmt->execute(['slug' => $slug]);
 $post = $stmt->fetch();
 
-if (!$post) { http_response_code(404); require_once '404.php'; exit; }
+if (!$post) { render404(); }
 
 // Fetch related posts (same category, excluding current, limit 3)
 $relStmt = $db->prepare(
