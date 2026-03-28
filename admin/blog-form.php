@@ -40,21 +40,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Handle featured image upload
     $featuredImage = $blog['featured_image'] ?? null;
     if (isset($_FILES['featured_image']) && $_FILES['featured_image']['error'] === UPLOAD_ERR_OK) {
-        $file         = $_FILES['featured_image'];
-        $allowedTypes = ['image/jpeg', 'image/png', 'image/webp'];
-        $maxSize      = 2 * 1024 * 1024; // 2 MB
+        $file = $_FILES['featured_image'];
+        $uploadError = validateImageUpload($file);
 
-        if (!in_array($file['type'], $allowedTypes)) {
-            $errors[] = 'نوع الملف غير مدعوم (JPEG, PNG, WebP فقط)';
-        } elseif ($file['size'] > $maxSize) {
-            $errors[] = 'حجم الملف يتجاوز 2 ميجابايت';
+        if ($uploadError) {
+            $errors[] = $uploadError;
         } else {
             $uploadDir = '../uploads/blog/';
             if (!is_dir($uploadDir)) {
                 mkdir($uploadDir, 0755, true);
             }
-            $ext      = pathinfo($file['name'], PATHINFO_EXTENSION);
-            $filename = uniqid() . '.' . $ext;
+            $filename = secureFilename($file['name']);
             move_uploaded_file($file['tmp_name'], $uploadDir . $filename);
 
             // Delete old image if replacing

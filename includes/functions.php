@@ -130,3 +130,102 @@ function deleteUpload(string $path): void {
         unlink($path);
     }
 }
+
+// ---------------------------------------------------------------------------
+// 10. Sanitize HTML (for TinyMCE content output)
+// ---------------------------------------------------------------------------
+function sanitizeHtml(string $html): string {
+    // Strip script/iframe/object/embed tags and on* event attributes
+    $html = preg_replace('#<(script|iframe|object|embed|applet|form|input|button|select|textarea|link|meta|style)[^>]*>.*?</\1>#si', '', $html);
+    $html = preg_replace('#<(script|iframe|object|embed|applet|form|input|button|select|textarea|link|meta|style)[^>]*/?\s*>#si', '', $html);
+    $html = preg_replace('#\s+on[a-z]+\s*=\s*["\'][^"\']*["\']#si', '', $html);
+    $html = preg_replace('#\s+on[a-z]+\s*=\s*\S+#si', '', $html);
+    // Strip javascript: and data: URLs in href/src attributes
+    $html = preg_replace('#(href|src|action)\s*=\s*["\']?\s*javascript:#si', '$1="', $html);
+    $html = preg_replace('#(href|src|action)\s*=\s*["\']?\s*data:#si', '$1="', $html);
+    return $html;
+}
+
+// ---------------------------------------------------------------------------
+// 11. Validate uploaded image (server-side MIME check)
+// ---------------------------------------------------------------------------
+function validateImageUpload(array $file, int $maxSize = 2097152): ?string {
+    if ($file['error'] !== UPLOAD_ERR_OK) {
+        return 'فشل رفع الملف';
+    }
+    if ($file['size'] > $maxSize) {
+        return 'حجم الملف يتجاوز 2 ميجابايت';
+    }
+    // Verify actual image content using getimagesize
+    $imageInfo = @getimagesize($file['tmp_name']);
+    if ($imageInfo === false) {
+        return 'الملف ليس صورة صالحة';
+    }
+    $allowedMimes = [IMAGETYPE_JPEG, IMAGETYPE_PNG, IMAGETYPE_WEBP];
+    if (!in_array($imageInfo[2], $allowedMimes)) {
+        return 'نوع الملف غير مدعوم (JPEG, PNG, WebP فقط)';
+    }
+    // Double-check with finfo if available
+    if (function_exists('finfo_open')) {
+        $finfo = finfo_open(FILEINFO_MIME_TYPE);
+        $mime = finfo_file($finfo, $file['tmp_name']);
+        finfo_close($finfo);
+        if (!in_array($mime, ['image/jpeg', 'image/png', 'image/webp'])) {
+            return 'نوع الملف غير مدعوم';
+        }
+    }
+    return null; // valid
+}
+
+// ---------------------------------------------------------------------------
+// 12. Generate secure filename for uploads
+// ---------------------------------------------------------------------------
+function secureFilename(string $originalName): string {
+    $ext = strtolower(pathinfo($originalName, PATHINFO_EXTENSION));
+    $allowedExts = ['jpg', 'jpeg', 'png', 'webp'];
+    if (!in_array($ext, $allowedExts)) {
+        $ext = 'bin';
+    }
+    return bin2hex(random_bytes(16)) . '.' . $ext;
+}
+
+// ---------------------------------------------------------------------------
+// 13. Login rate limiting (file-based)
+// ---------------------------------------------------------------------------
+function checkLoginRateLimit(string $ip, int $maxAttempts = 5, int $windowSeconds = 900): bool {
+    $dir = sys_get_temp_dir() . '/rkal_login_attempts';
+    if (!is_dir($dir)) { @mkdir($dir, 0700, true); }
+    $file = $dir . '/' . md5($ip) . '.json';
+    $attempts = [];
+    if (file_exists($file)) {
+        $data = json_decode(file_get_contents($file), true);
+        if (is_array($data)) {
+            // Keep only attempts within the window
+            $cutoff = time() - $windowSeconds;
+            $attempts = array_filter($data, fn($t) => $t > $cutoff);
+        }
+    }
+    return count($attempts) >= $maxAttempts;
+}
+
+function recordLoginAttempt(string $ip): void {
+    $dir = sys_get_temp_dir() . '/rkal_login_attempts';
+    if (!is_dir($dir)) { @mkdir($dir, 0700, true); }
+    $file = $dir . '/' . md5($ip) . '.json';
+    $attempts = [];
+    if (file_exists($file)) {
+        $data = json_decode(file_get_contents($file), true);
+        if (is_array($data)) {
+            $cutoff = time() - 900;
+            $attempts = array_filter($data, fn($t) => $t > $cutoff);
+        }
+    }
+    $attempts[] = time();
+    file_put_contents($file, json_encode(array_values($attempts)), LOCK_EX);
+}
+
+function clearLoginAttempts(string $ip): void {
+    $dir = sys_get_temp_dir() . '/rkal_login_attempts';
+    $file = $dir . '/' . md5($ip) . '.json';
+    if (file_exists($file)) { @unlink($file); }
+}

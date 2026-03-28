@@ -1,8 +1,43 @@
 ErrorDocument 404 /404.php
 
-# Deny direct access to sensitive directories (backup — each dir also has own .htaccess)
+# ── Security Headers ──────────────────────────────────────────────────────────
+<IfModule mod_headers.c>
+    # Prevent MIME-type sniffing
+    Header set X-Content-Type-Options "nosniff"
+    # Prevent clickjacking
+    Header set X-Frame-Options "SAMEORIGIN"
+    # XSS protection (legacy browsers)
+    Header set X-XSS-Protection "1; mode=block"
+    # Referrer policy
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    # Permissions policy
+    Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+    # Content Security Policy
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://cdn.tiny.cloud; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.tiny.cloud; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self'; frame-src 'none';"
+    # Remove server version info
+    Header unset X-Powered-By
+    Header unset Server
+</IfModule>
+
+# ── Force HTTPS (uncomment when SSL is configured) ────────────────────────────
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     RewriteCond %{HTTPS} off
+#     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>
+
+# ── Deny direct access to sensitive directories ──────────────────────────────
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteRule ^config/ - [F,L]
     RewriteRule ^sql/ - [F,L]
+    RewriteRule ^includes/ - [F,L]
 </IfModule>
+
+# ── Disable directory browsing ────────────────────────────────────────────────
+Options -Indexes
+
+# ── Block access to hidden files (.git, .env, etc.) ──────────────────────────
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>

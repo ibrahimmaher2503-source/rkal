@@ -125,7 +125,7 @@ function drawerClass(string $page, string $activePage): string {
 <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:right-4 focus:z-[100] focus:bg-primary-container focus:text-on-primary-fixed focus:px-4 focus:py-2 focus:rounded-xl focus:font-bold">انتقل إلى المحتوى</a>
 
 <!-- Navbar -->
-<nav id="navbar" class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-2xl border-b border-white/[0.04] transition-all duration-500" style="box-shadow: 0 1px 40px rgba(0,242,255,0.04), 0 0 80px rgba(0,0,0,0.3);">
+<nav id="navbar" class="fixed top-0 w-full z-50 backdrop-blur-2xl border-b border-white/[0.04] transition-all duration-500" style="background-color: #071426; box-shadow: 0 1px 40px rgba(0,242,255,0.04), 0 0 80px rgba(0,0,0,0.3);">
   <div class="flex justify-between items-center px-5 md:px-10 py-2.5 max-w-screen-2xl mx-auto text-sm font-medium">
     <!-- Logo -->
     <a href="index.php" class="flex items-center gap-3 group">

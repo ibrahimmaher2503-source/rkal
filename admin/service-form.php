@@ -115,6 +115,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Validate
     if (!$title) $errors[] = 'العنوان مطلوب';
 
+    // Handle featured image upload
+    $featuredImage = $service['featured_image'] ?? null;
+    if (isset($_FILES['featured_image']) && $_FILES['featured_image']['error'] === UPLOAD_ERR_OK) {
+        $file = $_FILES['featured_image'];
+        $uploadError = validateImageUpload($file);
+
+        if ($uploadError) {
+            $errors[] = $uploadError;
+        } else {
+            $uploadDir = '../uploads/services/';
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir, 0755, true);
+            }
+            $filename = secureFilename($file['name']);
+            move_uploaded_file($file['tmp_name'], $uploadDir . $filename);
+
+            // Delete old image if replacing
+            if ($featuredImage) {
+                deleteUpload('../' . $featuredImage);
+            }
+            $featuredImage = 'uploads/services/' . $filename;
+        }
+    }
+
     if (empty($errors)) {
         $params = [
             ':title'               => $title,
@@ -125,6 +149,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ':grid_col_span'       => $gridColSpan,
             ':sort_order'          => $sortOrder,
             ':is_active'           => $isActive,
+            ':featured_image'      => $featuredImage,
             ':overview_content'    => $overviewContent,
             ':full_content'        => $fullContent,
             ':subservices'         => $subservices,
@@ -148,6 +173,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     grid_col_span     = :grid_col_span,
                     sort_order        = :sort_order,
                     is_active         = :is_active,
+                    featured_image    = :featured_image,
                     overview_content  = :overview_content,
                     full_content      = :full_content,
                     subservices       = :subservices,
@@ -163,10 +189,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
             $stmt = $db->prepare(
                 'INSERT INTO services
-                    (title, slug, icon, description, color_scheme, grid_col_span, sort_order, is_active,
+                    (title, slug, icon, description, color_scheme, grid_col_span, sort_order, is_active, featured_image,
                      overview_content, full_content, subservices, stats, target_businesses, benefits, workflow, tech_stack, faq)
                  VALUES
-                    (:title, :slug, :icon, :description, :color_scheme, :grid_col_span, :sort_order, :is_active,
+                    (:title, :slug, :icon, :description, :color_scheme, :grid_col_span, :sort_order, :is_active, :featured_image,
                      :overview_content, :full_content, :subservices, :stats, :target_businesses, :benefits, :workflow, :tech_stack, :faq)'
             );
             $stmt->execute($params);
@@ -234,6 +260,7 @@ require_once 'includes/admin-header.php';
 
 <!-- ===== Form ===== -->
 <form method="POST" action="service-form.php<?= $id ? '?id=' . (int) $id : '' ?>"
+      enctype="multipart/form-data"
       class="space-y-6">
   <?= csrfField() ?>
 
@@ -372,6 +399,42 @@ require_once 'includes/admin-header.php';
       <label for="full_content" class="block text-sm font-medium text-on-surface mb-1.5">المحتوى الكامل</label>
       <textarea id="full_content" name="full_content"><?= e($_POST['full_content'] ?? $service['full_content'] ?? '') ?></textarea>
     </div>
+  </div>
+
+  <!-- ── Featured Image ── -->
+  <div class="glass-panel rounded-xl p-6 space-y-5">
+    <h2 class="text-sm font-semibold text-on-surface-variant uppercase tracking-wider flex items-center gap-2">
+      <span class="material-symbols-outlined text-base text-[#00dbe7]" aria-hidden="true">image</span>
+      الصورة المميزة
+    </h2>
+
+    <!-- Current image preview (edit mode) -->
+    <?php $currentImage = $service['featured_image'] ?? null; ?>
+    <?php if ($currentImage): ?>
+      <div class="mb-3">
+        <p class="text-xs text-on-surface-variant mb-2">الصورة الحالية:</p>
+        <img src="../<?= e($currentImage) ?>" alt="الصورة المميزة الحالية"
+             class="h-32 rounded-xl object-cover border"
+             style="border-color: rgba(0,242,255,0.15);">
+      </div>
+    <?php endif; ?>
+
+    <div>
+      <label for="featured_image" class="block text-sm font-medium text-on-surface mb-1.5">
+        <?= $currentImage ? 'استبدال الصورة' : 'رفع صورة' ?>
+      </label>
+      <input type="file" id="featured_image" name="featured_image"
+             accept="image/jpeg,image/png,image/webp"
+             class="w-full text-sm text-on-surface-variant file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:cursor-pointer transition-all"
+             style="background: rgba(255,255,255,0.04); border: 1px solid rgba(0,242,255,0.12); border-radius: 0.5rem; padding: 0.5rem;"
+             onchange="previewImage(this)">
+      <p class="mt-1 text-xs text-on-surface-variant">JPEG, PNG أو WebP — بحد أقصى 2 ميجابايت</p>
+    </div>
+
+    <!-- New image preview -->
+    <img id="image-preview" src="" alt="معاينة الصورة"
+         class="hidden h-32 rounded-xl object-cover border mt-2"
+         style="border-color: rgba(0,242,255,0.15);">
   </div>
 
   <!-- ── Section 3: Subservices ── -->
@@ -729,6 +792,22 @@ function arabicToSlug(text) {
         .replace(/[^a-z0-9-]/g, '')
         .replace(/-+/g, '-')
         .replace(/^-|-$/g, '');
+}
+
+// Image preview
+function previewImage(input) {
+    var preview = document.getElementById('image-preview');
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            preview.src = e.target.result;
+            preview.classList.remove('hidden');
+        };
+        reader.readAsDataURL(input.files[0]);
+    } else {
+        preview.src = '';
+        preview.classList.add('hidden');
+    }
 }
 </script>
 

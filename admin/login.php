@@ -1,4 +1,10 @@
 <?php
+ini_set('session.cookie_httponly', '1');
+ini_set('session.cookie_samesite', 'Strict');
+ini_set('session.use_strict_mode', '1');
+if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
+    ini_set('session.cookie_secure', '1');
+}
 session_start();
 require_once '../includes/functions.php';
 
@@ -43,29 +49,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mode = 'change_password';
     } else {
         // Handle login
-        $username = $_POST['username'] ?? '';
-        $password = $_POST['password'] ?? '';
+        $clientIp = $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
 
-        $db   = getDB();
-        $stmt = $db->prepare('SELECT * FROM admins WHERE username = :username');
-        $stmt->execute(['username' => $username]);
-        $admin = $stmt->fetch();
-
-        if ($admin && password_verify($password, $admin['password_hash'])) {
-            session_regenerate_id(true);
-            $_SESSION['admin_id']             = $admin['id'];
-            $_SESSION['admin_username']        = $admin['username'];
-            $_SESSION['must_change_password'] = (bool) $admin['must_change_password'];
-            $_SESSION['last_activity']         = time();
-
-            if ($admin['must_change_password']) {
-                header('Location: login.php?change_password=1');
-            } else {
-                header('Location: dashboard.php');
-            }
-            exit;
+        // Rate limiting: 5 attempts per 15 minutes
+        if (checkLoginRateLimit($clientIp)) {
+            $error = 'تم تجاوز عدد المحاولات المسموح بها. يرجى المحاولة بعد 15 دقيقة';
         } else {
-            $error = 'اسم المستخدم أو كلمة المرور غير صحيحة';
+            $username = $_POST['username'] ?? '';
+            $password = $_POST['password'] ?? '';
+
+            $db   = getDB();
+            $stmt = $db->prepare('SELECT * FROM admins WHERE username = :username');
+            $stmt->execute(['username' => $username]);
+            $admin = $stmt->fetch();
+
+            if ($admin && password_verify($password, $admin['password_hash'])) {
+                clearLoginAttempts($clientIp);
+                session_regenerate_id(true);
+                $_SESSION['admin_id']             = $admin['id'];
+                $_SESSION['admin_username']        = $admin['username'];
+                $_SESSION['must_change_password'] = (bool) $admin['must_change_password'];
+                $_SESSION['last_activity']         = time();
+
+                if ($admin['must_change_password']) {
+                    header('Location: login.php?change_password=1');
+                } else {
+                    header('Location: dashboard.php');
+                }
+                exit;
+            } else {
+                recordLoginAttempt($clientIp);
+                $error = 'اسم المستخدم أو كلمة المرور غير صحيحة';
+            }
         }
     }
 }
