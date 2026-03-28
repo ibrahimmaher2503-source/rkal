@@ -168,99 +168,47 @@ require_once 'includes/header.php';
   </div>
 </section>
 
-<!-- 5. Work Methodology -->
-<section id="methodology" class="py-32 px-4 md:px-8">
-  <div class="max-w-screen-2xl mx-auto">
-    <div class="reveal text-center mb-20 space-y-4">
-      <h2 class="text-2xl sm:text-4xl md:text-5xl font-headline font-bold text-white">منهجية عملنا</h2>
-      <p class="text-on-surface-variant max-w-2xl mx-auto">منهجية عمل واضحة تضمن جودة النتائج في كل مرحلة</p>
+<!-- 5. Work Methodology — Diamond Pipeline -->
+<section id="methodology" class="py-32 md:py-40 px-4 md:px-8 relative overflow-hidden">
+  <div class="absolute inset-0 circuit-bg opacity-10 pointer-events-none"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-container/[0.02] rounded-full blur-[250px] pointer-events-none"></div>
+  <div class="max-w-screen-xl mx-auto relative z-10">
+    <div class="reveal text-center mb-20 md:mb-24 space-y-4">
+      <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary-container/8 border border-primary-container/15 text-primary-container text-sm font-bold backdrop-blur-sm"><span class="material-symbols-outlined text-base">route</span>المنهجية</div>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-headline font-bold text-white">منهجية عملنا</h2>
+      <p class="text-on-surface-variant max-w-xl mx-auto leading-relaxed">ست مراحل مدروسة تضمن جودة النتائج في كل خطوة</p>
     </div>
-    <!-- Desktop: horizontal timeline -->
-    <div class="hidden lg:block">
-      <div class="relative mx-auto max-w-5xl">
-        <div class="absolute top-6 left-0 right-0 h-[2px] bg-gradient-to-l from-primary-container via-primary-container/50 to-sand-gold z-0"></div>
-        <div class="grid grid-cols-6 gap-4 relative z-10">
-          <div class="flex flex-col items-center text-center">
-            <div class="w-12 h-12 rounded-full bg-primary-container/10 border border-primary-container/30 flex items-center justify-center text-primary-container font-bold text-lg mb-4">١</div>
-            <span class="material-symbols-outlined text-primary-container text-2xl mb-2" aria-hidden="true">search</span>
-            <h4 class="text-sm font-bold text-white mb-1">دراسة الاحتياج</h4>
-            <p class="text-xs text-on-surface-variant">فهم متطلبات المشروع وأهدافه</p>
-          </div>
-          <div class="flex flex-col items-center text-center">
-            <div class="w-12 h-12 rounded-full bg-primary-container/10 border border-primary-container/30 flex items-center justify-center text-primary-container font-bold text-lg mb-4">٢</div>
-            <span class="material-symbols-outlined text-primary-container text-2xl mb-2" aria-hidden="true">analytics</span>
-            <h4 class="text-sm font-bold text-white mb-1">التحليل والتخطيط</h4>
-            <p class="text-xs text-on-surface-variant">وضع خارطة الطريق التقنية</p>
-          </div>
-          <div class="flex flex-col items-center text-center">
-            <div class="w-12 h-12 rounded-full bg-primary-container/10 border border-primary-container/30 flex items-center justify-center text-primary-container font-bold text-lg mb-4">٣</div>
-            <span class="material-symbols-outlined text-primary-container text-2xl mb-2" aria-hidden="true">design_services</span>
-            <h4 class="text-sm font-bold text-white mb-1">تصميم تجربة المستخدم</h4>
-            <p class="text-xs text-on-surface-variant">واجهات جذابة وسهلة الاستخدام</p>
-          </div>
-          <div class="flex flex-col items-center text-center">
-            <div class="w-12 h-12 rounded-full bg-sand-gold/10 border border-sand-gold/30 flex items-center justify-center text-sand-gold font-bold text-lg mb-4">٤</div>
-            <span class="material-symbols-outlined text-sand-gold text-2xl mb-2" aria-hidden="true">code</span>
-            <h4 class="text-sm font-bold text-white mb-1">التطوير والتنفيذ</h4>
-            <p class="text-xs text-on-surface-variant">بناء المنتج بأحدث التقنيات</p>
-          </div>
-          <div class="flex flex-col items-center text-center">
-            <div class="w-12 h-12 rounded-full bg-sand-gold/10 border border-sand-gold/30 flex items-center justify-center text-sand-gold font-bold text-lg mb-4">٥</div>
-            <span class="material-symbols-outlined text-sand-gold text-2xl mb-2" aria-hidden="true">verified_user</span>
-            <h4 class="text-sm font-bold text-white mb-1">الاختبار وضمان الجودة</h4>
-            <p class="text-xs text-on-surface-variant">فحص شامل قبل التسليم</p>
-          </div>
-          <div class="flex flex-col items-center text-center">
-            <div class="w-12 h-12 rounded-full bg-sand-gold/10 border border-sand-gold/30 flex items-center justify-center text-sand-gold font-bold text-lg mb-4">٦</div>
-            <span class="material-symbols-outlined text-sand-gold text-2xl mb-2" aria-hidden="true">rocket_launch</span>
-            <h4 class="text-sm font-bold text-white mb-1">الإطلاق والدعم المستمر</h4>
-            <p class="text-xs text-on-surface-variant">متابعة ودعم بعد الإطلاق</p>
-          </div>
-        </div>
+
+    <!-- Desktop: 3x2 Diamond Grid -->
+    <div class="hidden lg:block max-w-5xl mx-auto">
+      <!-- Row 1: Cyan Phase -->
+      <div class="grid grid-cols-3 gap-0 relative mb-4">
+        <div class="absolute top-[40px] right-[16.66%] left-[16.66%] h-[2px] z-0"><div class="w-full h-full bg-gradient-to-l from-primary-container/30 via-primary-container/20 to-primary-container/30"></div></div>
+        <div class="group relative z-10 px-3 reveal" style="animation-delay:0.1s"><div class="w-20 h-20 mx-auto mb-6 relative"><div class="absolute inset-0 rounded-2xl bg-primary-container/5 border border-primary-container/20 rotate-45 group-hover:rotate-[50deg] group-hover:scale-110 transition-all duration-700"></div><div class="absolute inset-0 flex items-center justify-center"><span class="material-symbols-outlined text-primary-container text-3xl">search</span></div><div class="absolute -inset-2 rounded-2xl border border-primary-container/[0.06] rotate-45 group-hover:rotate-[55deg] transition-all duration-700"></div></div><div class="text-center"><div class="text-[11px] font-black text-primary-container/30 tracking-[0.3em] mb-2">٠١</div><h4 class="text-base font-bold text-white mb-2 group-hover:text-primary-fixed transition-colors">دراسة الاحتياج</h4><p class="text-xs text-on-surface-variant leading-relaxed px-2">فهم متطلبات المشروع وأهدافه التجارية والتقنية</p></div></div>
+        <div class="group relative z-10 px-3 reveal" style="animation-delay:0.2s"><div class="w-20 h-20 mx-auto mb-6 relative"><div class="absolute inset-0 rounded-2xl bg-primary-container/5 border border-primary-container/20 rotate-45 group-hover:rotate-[50deg] group-hover:scale-110 transition-all duration-700"></div><div class="absolute inset-0 flex items-center justify-center"><span class="material-symbols-outlined text-primary-container text-3xl">analytics</span></div><div class="absolute -inset-2 rounded-2xl border border-primary-container/[0.06] rotate-45 group-hover:rotate-[55deg] transition-all duration-700"></div></div><div class="text-center"><div class="text-[11px] font-black text-primary-container/30 tracking-[0.3em] mb-2">٠٢</div><h4 class="text-base font-bold text-white mb-2 group-hover:text-primary-fixed transition-colors">التحليل والتخطيط</h4><p class="text-xs text-on-surface-variant leading-relaxed px-2">وضع خارطة الطريق التقنية وبنية النظام</p></div></div>
+        <div class="group relative z-10 px-3 reveal" style="animation-delay:0.3s"><div class="w-20 h-20 mx-auto mb-6 relative"><div class="absolute inset-0 rounded-2xl bg-primary-container/5 border border-primary-container/20 rotate-45 group-hover:rotate-[50deg] group-hover:scale-110 transition-all duration-700"></div><div class="absolute inset-0 flex items-center justify-center"><span class="material-symbols-outlined text-primary-container text-3xl">design_services</span></div><div class="absolute -inset-2 rounded-2xl border border-primary-container/[0.06] rotate-45 group-hover:rotate-[55deg] transition-all duration-700"></div></div><div class="text-center"><div class="text-[11px] font-black text-primary-container/30 tracking-[0.3em] mb-2">٠٣</div><h4 class="text-base font-bold text-white mb-2 group-hover:text-primary-fixed transition-colors">تصميم تجربة المستخدم</h4><p class="text-xs text-on-surface-variant leading-relaxed px-2">واجهات جذابة وبديهية تعكس هوية المنشأة</p></div></div>
+      </div>
+      <!-- Phase Connector -->
+      <div class="flex justify-center py-5 reveal"><div class="relative w-40 h-10"><div class="absolute top-0 left-1/2 w-[2px] h-full bg-gradient-to-b from-primary-container/25 to-sand-gold/25"></div><div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"><div class="w-9 h-9 rounded-lg border border-white/10 flex items-center justify-center" style="background:linear-gradient(135deg,rgba(0,242,255,0.06),rgba(212,175,55,0.06))"><span class="material-symbols-outlined text-white/25 text-base">keyboard_double_arrow_down</span></div></div></div></div>
+      <!-- Row 2: Gold Phase -->
+      <div class="grid grid-cols-3 gap-0 relative mt-4">
+        <div class="absolute top-[40px] right-[16.66%] left-[16.66%] h-[2px] z-0"><div class="w-full h-full bg-gradient-to-l from-sand-gold/30 via-sand-gold/20 to-sand-gold/30"></div></div>
+        <div class="group relative z-10 px-3 reveal" style="animation-delay:0.45s"><div class="w-20 h-20 mx-auto mb-6 relative"><div class="absolute inset-0 rounded-2xl bg-sand-gold/5 border border-sand-gold/20 rotate-45 group-hover:rotate-[50deg] group-hover:scale-110 transition-all duration-700"></div><div class="absolute inset-0 flex items-center justify-center"><span class="material-symbols-outlined text-sand-gold text-3xl">code</span></div><div class="absolute -inset-2 rounded-2xl border border-sand-gold/[0.06] rotate-45 group-hover:rotate-[55deg] transition-all duration-700"></div></div><div class="text-center"><div class="text-[11px] font-black text-sand-gold/30 tracking-[0.3em] mb-2">٠٤</div><h4 class="text-base font-bold text-white mb-2 group-hover:text-sand-gold transition-colors">التطوير والتنفيذ</h4><p class="text-xs text-on-surface-variant leading-relaxed px-2">بناء المنتج بأحدث التقنيات العالمية</p></div></div>
+        <div class="group relative z-10 px-3 reveal" style="animation-delay:0.55s"><div class="w-20 h-20 mx-auto mb-6 relative"><div class="absolute inset-0 rounded-2xl bg-sand-gold/5 border border-sand-gold/20 rotate-45 group-hover:rotate-[50deg] group-hover:scale-110 transition-all duration-700"></div><div class="absolute inset-0 flex items-center justify-center"><span class="material-symbols-outlined text-sand-gold text-3xl">verified_user</span></div><div class="absolute -inset-2 rounded-2xl border border-sand-gold/[0.06] rotate-45 group-hover:rotate-[55deg] transition-all duration-700"></div></div><div class="text-center"><div class="text-[11px] font-black text-sand-gold/30 tracking-[0.3em] mb-2">٠٥</div><h4 class="text-base font-bold text-white mb-2 group-hover:text-sand-gold transition-colors">الاختبار وضمان الجودة</h4><p class="text-xs text-on-surface-variant leading-relaxed px-2">فحص شامل يضمن جاهزية المنتج للإطلاق</p></div></div>
+        <div class="group relative z-10 px-3 reveal" style="animation-delay:0.65s"><div class="w-20 h-20 mx-auto mb-6 relative"><div class="absolute inset-0 rounded-2xl border border-sand-gold/30 rotate-45 group-hover:rotate-[50deg] group-hover:scale-110 transition-all duration-700" style="background:linear-gradient(135deg,rgba(212,175,55,0.12),rgba(212,175,55,0.04))"></div><div class="absolute inset-0 flex items-center justify-center"><span class="material-symbols-outlined text-sand-gold text-3xl" style="font-variation-settings:'FILL' 1">rocket_launch</span></div><div class="absolute -inset-2 rounded-2xl border border-sand-gold/10 rotate-45 group-hover:rotate-[55deg] transition-all duration-700"></div><div class="absolute -inset-4 rounded-3xl bg-sand-gold/[0.04] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 rotate-45 pointer-events-none"></div></div><div class="text-center"><div class="text-[11px] font-black text-sand-gold/40 tracking-[0.3em] mb-2">٠٦</div><h4 class="text-base font-bold text-white mb-2 group-hover:text-sand-gold transition-colors">الإطلاق والدعم المستمر</h4><p class="text-xs text-on-surface-variant leading-relaxed px-2">إطلاق سلس مع فريق دعم متخصص</p></div></div>
       </div>
     </div>
-    <!-- Mobile: vertical timeline -->
-    <div class="lg:hidden space-y-8 max-w-md mx-auto">
-      <div class="flex gap-6 items-start">
-        <div class="flex flex-col items-center flex-shrink-0">
-          <div class="w-12 h-12 rounded-full bg-primary-container/10 border border-primary-container/30 flex items-center justify-center text-primary-container font-bold">١</div>
-          <div class="w-[2px] h-16 bg-primary-container/20 mt-2"></div>
-        </div>
-        <div class="pt-2"><h4 class="font-bold text-white mb-1">دراسة الاحتياج</h4><p class="text-sm text-on-surface-variant">فهم متطلبات المشروع وأهدافه</p></div>
-      </div>
-      <div class="flex gap-6 items-start">
-        <div class="flex flex-col items-center flex-shrink-0">
-          <div class="w-12 h-12 rounded-full bg-primary-container/10 border border-primary-container/30 flex items-center justify-center text-primary-container font-bold">٢</div>
-          <div class="w-[2px] h-16 bg-primary-container/20 mt-2"></div>
-        </div>
-        <div class="pt-2"><h4 class="font-bold text-white mb-1">التحليل والتخطيط</h4><p class="text-sm text-on-surface-variant">وضع خارطة الطريق التقنية</p></div>
-      </div>
-      <div class="flex gap-6 items-start">
-        <div class="flex flex-col items-center flex-shrink-0">
-          <div class="w-12 h-12 rounded-full bg-primary-container/10 border border-primary-container/30 flex items-center justify-center text-primary-container font-bold">٣</div>
-          <div class="w-[2px] h-16 bg-gradient-to-b from-primary-container/20 to-sand-gold/20 mt-2"></div>
-        </div>
-        <div class="pt-2"><h4 class="font-bold text-white mb-1">تصميم تجربة المستخدم</h4><p class="text-sm text-on-surface-variant">واجهات جذابة وسهلة الاستخدام</p></div>
-      </div>
-      <div class="flex gap-6 items-start">
-        <div class="flex flex-col items-center flex-shrink-0">
-          <div class="w-12 h-12 rounded-full bg-sand-gold/10 border border-sand-gold/30 flex items-center justify-center text-sand-gold font-bold">٤</div>
-          <div class="w-[2px] h-16 bg-sand-gold/20 mt-2"></div>
-        </div>
-        <div class="pt-2"><h4 class="font-bold text-white mb-1">التطوير والتنفيذ</h4><p class="text-sm text-on-surface-variant">بناء المنتج بأحدث التقنيات</p></div>
-      </div>
-      <div class="flex gap-6 items-start">
-        <div class="flex flex-col items-center flex-shrink-0">
-          <div class="w-12 h-12 rounded-full bg-sand-gold/10 border border-sand-gold/30 flex items-center justify-center text-sand-gold font-bold">٥</div>
-          <div class="w-[2px] h-16 bg-sand-gold/20 mt-2"></div>
-        </div>
-        <div class="pt-2"><h4 class="font-bold text-white mb-1">الاختبار وضمان الجودة</h4><p class="text-sm text-on-surface-variant">فحص شامل قبل التسليم</p></div>
-      </div>
-      <div class="flex gap-6 items-start">
-        <div class="flex flex-col items-center flex-shrink-0">
-          <div class="w-12 h-12 rounded-full bg-sand-gold/10 border border-sand-gold/30 flex items-center justify-center text-sand-gold font-bold">٦</div>
-        </div>
-        <div class="pt-2"><h4 class="font-bold text-white mb-1">الإطلاق والدعم المستمر</h4><p class="text-sm text-on-surface-variant">متابعة ودعم بعد الإطلاق</p></div>
+
+    <!-- Mobile: Vertical Diamond Pipeline -->
+    <div class="lg:hidden max-w-sm mx-auto relative">
+      <div class="absolute right-[23px] top-0 bottom-0 w-[2px] pointer-events-none"><div class="w-full h-full bg-gradient-to-b from-primary-container/30 via-primary-container/15 via-60% to-sand-gold/30"></div></div>
+      <div class="space-y-7">
+        <div class="relative flex gap-5 items-start reveal" style="animation-delay:0.1s"><div class="flex-shrink-0 w-12 h-12 rounded-xl bg-primary-container/8 border border-primary-container/20 flex items-center justify-center z-10 rotate-45"><span class="material-symbols-outlined text-primary-container text-xl -rotate-45">search</span></div><div class="glass-panel rounded-2xl p-4 flex-1 border-white/5"><div class="flex items-center justify-between mb-1"><h4 class="font-bold text-white text-[15px]">دراسة الاحتياج</h4><span class="text-[10px] text-primary-container/30 font-black tracking-widest">٠١</span></div><p class="text-sm text-on-surface-variant leading-relaxed">فهم متطلبات المشروع وأهدافه</p></div></div>
+        <div class="relative flex gap-5 items-start reveal" style="animation-delay:0.2s"><div class="flex-shrink-0 w-12 h-12 rounded-xl bg-primary-container/8 border border-primary-container/20 flex items-center justify-center z-10 rotate-45"><span class="material-symbols-outlined text-primary-container text-xl -rotate-45">analytics</span></div><div class="glass-panel rounded-2xl p-4 flex-1 border-white/5"><div class="flex items-center justify-between mb-1"><h4 class="font-bold text-white text-[15px]">التحليل والتخطيط</h4><span class="text-[10px] text-primary-container/30 font-black tracking-widest">٠٢</span></div><p class="text-sm text-on-surface-variant leading-relaxed">وضع خارطة الطريق التقنية</p></div></div>
+        <div class="relative flex gap-5 items-start reveal" style="animation-delay:0.3s"><div class="flex-shrink-0 w-12 h-12 rounded-xl bg-primary-container/8 border border-primary-container/20 flex items-center justify-center z-10 rotate-45"><span class="material-symbols-outlined text-primary-container text-xl -rotate-45">design_services</span></div><div class="glass-panel rounded-2xl p-4 flex-1 border-white/5"><div class="flex items-center justify-between mb-1"><h4 class="font-bold text-white text-[15px]">تصميم تجربة المستخدم</h4><span class="text-[10px] text-primary-container/30 font-black tracking-widest">٠٣</span></div><p class="text-sm text-on-surface-variant leading-relaxed">واجهات جذابة وسهلة الاستخدام</p></div></div>
+        <div class="relative flex gap-5 items-start reveal" style="animation-delay:0.4s"><div class="flex-shrink-0 w-12 h-12 rounded-xl bg-sand-gold/8 border border-sand-gold/20 flex items-center justify-center z-10 rotate-45"><span class="material-symbols-outlined text-sand-gold text-xl -rotate-45">code</span></div><div class="glass-panel rounded-2xl p-4 flex-1 border-white/5"><div class="flex items-center justify-between mb-1"><h4 class="font-bold text-white text-[15px]">التطوير والتنفيذ</h4><span class="text-[10px] text-sand-gold/30 font-black tracking-widest">٠٤</span></div><p class="text-sm text-on-surface-variant leading-relaxed">بناء المنتج بأحدث التقنيات</p></div></div>
+        <div class="relative flex gap-5 items-start reveal" style="animation-delay:0.5s"><div class="flex-shrink-0 w-12 h-12 rounded-xl bg-sand-gold/8 border border-sand-gold/20 flex items-center justify-center z-10 rotate-45"><span class="material-symbols-outlined text-sand-gold text-xl -rotate-45">verified_user</span></div><div class="glass-panel rounded-2xl p-4 flex-1 border-white/5"><div class="flex items-center justify-between mb-1"><h4 class="font-bold text-white text-[15px]">الاختبار وضمان الجودة</h4><span class="text-[10px] text-sand-gold/30 font-black tracking-widest">٠٥</span></div><p class="text-sm text-on-surface-variant leading-relaxed">فحص شامل قبل التسليم</p></div></div>
+        <div class="relative flex gap-5 items-start reveal" style="animation-delay:0.6s"><div class="flex-shrink-0 w-12 h-12 rounded-xl border border-sand-gold/30 flex items-center justify-center z-10 rotate-45 shadow-[0_0_20px_rgba(212,175,55,0.1)]" style="background:linear-gradient(135deg,rgba(212,175,55,0.12),rgba(212,175,55,0.04))"><span class="material-symbols-outlined text-sand-gold text-xl -rotate-45" style="font-variation-settings:'FILL' 1">rocket_launch</span></div><div class="rounded-2xl p-4 flex-1 border border-sand-gold/15 backdrop-blur-xl" style="background:linear-gradient(135deg,rgba(212,175,55,0.04),rgba(24,30,54,0.8))"><div class="flex items-center justify-between mb-1"><h4 class="font-bold text-white text-[15px]">الإطلاق والدعم المستمر</h4><span class="text-[10px] text-sand-gold/40 font-black tracking-widest">٠٦</span></div><p class="text-sm text-on-surface-variant leading-relaxed">متابعة ودعم بعد الإطلاق</p></div></div>
       </div>
     </div>
   </div>
