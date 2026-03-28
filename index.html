@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html class="dark" dir="rtl" lang="ar">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>ركال | حلول برمجية وطنية ذكية</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-fixed": "#74f5ff",
+            "surface-bright": "#323851",
+            "inverse-on-surface": "#292f48",
+            "on-primary-fixed-variant": "#004f54",
+            "tertiary-fixed-dim": "#4cd6ff",
+            "inverse-surface": "#dce1ff",
+            "primary-container": "#00f2ff",
+            "surface-dim": "#0b1229",
+            "surface-container-high": "#222941",
+            "on-error": "#690005",
+            "primary-fixed-dim": "#00dbe7",
+            "surface-variant": "#2d344c",
+            "error": "#ffb4ab",
+            "on-tertiary": "#003543",
+            "on-tertiary-fixed-variant": "#004e60",
+            "secondary-fixed-dim": "#bcc5ed",
+            "surface-container-lowest": "#060d24",
+            "surface-container-highest": "#2d344c",
+            "on-surface-variant": "#b9cacb",
+            "on-secondary-fixed-variant": "#3d4567",
+            "on-primary": "#00363a",
+            "surface-container": "#181e36",
+            "secondary-container": "#3d4567",
+            "outline": "#849495",
+            "inverse-primary": "#00696f",
+            "tertiary-fixed": "#b7eaff",
+            "on-primary-fixed": "#002022",
+            "secondary-fixed": "#dce1ff",
+            "on-tertiary-fixed": "#001f28",
+            "on-error-container": "#ffdad6",
+            "on-surface": "#dce1ff",
+            "on-secondary": "#262f4f",
+            "surface": "#0b1229",
+            "secondary": "#bcc5ed",
+            "primary": "#e1fdff",
+            "on-secondary-container": "#abb3db",
+            "surface-tint": "#00dbe7",
+            "surface-container-low": "#141a32",
+            "tertiary": "#eef9ff",
+            "on-background": "#dce1ff",
+            "error-container": "#93000a",
+            "outline-variant": "#3a494b",
+            "tertiary-container": "#a0e5ff",
+            "background": "#0b1229",
+            "on-primary-container": "#006a71",
+            "on-secondary-fixed": "#111a39",
+            "on-tertiary-container": "#006881",
+            "sand-gold": "#D4AF37"
+          },
+          fontFamily: {
+            "headline": ["IBM Plex Sans Arabic", "sans-serif"],
+            "body": ["IBM Plex Sans Arabic", "sans-serif"],
+            "label": ["IBM Plex Sans Arabic", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem"
+          },
+        },
+      },
+    }
+  </script>
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container/30 overflow-x-hidden sadu-pattern">
+
+<!-- Skip Link -->
+<a href="#hero" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:right-4 focus:z-[100] focus:bg-primary-container focus:text-on-primary-fixed focus:px-4 focus:py-2 focus:rounded-xl focus:font-bold">انتقل إلى المحتوى</a>
+
+<!-- Navbar -->
+<nav id="navbar" class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/5 shadow-[0_20px_40px_rgba(0,242,255,0.08)]">
+  <div class="flex flex-row-reverse justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto text-sm font-medium">
+    <div class="flex items-center gap-3">
+      <div class="text-2xl font-bold text-white tracking-tighter">رکال</div>
+      <div class="h-6 w-[1px] bg-white/10 hidden md:block"></div>
+      <div class="hidden md:flex items-center gap-1.5 text-[10px] text-sand-gold font-bold uppercase tracking-widest opacity-80">
+        <span>Vision</span>
+        <span class="bg-sand-gold/20 px-1 rounded">2030</span>
+      </div>
+    </div>
+    <div class="hidden md:flex flex-row-reverse gap-8 items-center">
+      <a class="text-[#00f2ff] border-b-2 border-[#00f2ff] pb-1" href="index.html">الرئيسية</a>
+      <a class="text-white/70 hover:text-white transition-colors" href="about.html">من نحن</a>
+      <a class="text-white/70 hover:text-white transition-colors" href="services.html">خدماتنا</a>
+      <a class="text-white/70 hover:text-white transition-colors" href="#">الحلول</a>
+      <a class="text-white/70 hover:text-white transition-colors" href="#">المدونة</a>
+      <a class="text-white/70 hover:text-white transition-colors" href="contact.html">تواصل معنا</a>
+    </div>
+    <button class="hidden md:block tech-gradient text-on-primary-fixed px-6 py-2.5 rounded-xl font-bold hover:shadow-[0_0_15px_rgba(0,242,255,0.3)] transition-all duration-300">
+      اطلب عرض سعر
+    </button>
+    <button id="hamburger-btn" class="md:hidden text-white p-2" aria-label="القائمة" aria-expanded="false">
+      <span class="material-symbols-outlined text-2xl">menu</span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Drawer Overlay -->
+<div id="drawer-overlay" class="drawer-overlay"></div>
+
+<!-- Mobile Drawer Panel -->
+<div id="mobile-drawer" class="drawer-panel bg-surface-container" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="flex flex-col h-full p-8">
+    <div class="flex justify-between items-center mb-10">
+      <div class="text-2xl font-bold text-white">رکال</div>
+      <button id="drawer-close-btn" class="text-white/60 hover:text-white" aria-label="إغلاق القائمة">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <nav class="flex flex-col gap-2 flex-1">
+      <a href="index.html" class="text-[#00f2ff] font-bold py-3 px-4 rounded-xl bg-primary-container/5 text-lg">الرئيسية</a>
+      <a href="about.html" class="text-white/70 hover:text-white py-3 px-4 rounded-xl hover:bg-white/5 transition-all text-lg">من نحن</a>
+      <a href="services.html" class="text-white/70 hover:text-white py-3 px-4 rounded-xl hover:bg-white/5 transition-all text-lg">خدماتنا</a>
+      <a href="#" class="text-white/70 hover:text-white py-3 px-4 rounded-xl hover:bg-white/5 transition-all text-lg">الحلول</a>
+      <a href="#" class="text-white/70 hover:text-white py-3 px-4 rounded-xl hover:bg-white/5 transition-all text-lg">المدونة</a>
+      <a href="contact.html" class="text-white/70 hover:text-white py-3 px-4 rounded-xl hover:bg-white/5 transition-all text-lg">تواصل معنا</a>
+    </nav>
+    <div class="mt-auto space-y-6">
+      <button class="w-full tech-gradient text-on-primary-fixed py-4 rounded-xl font-bold text-lg">
+        اطلب عرض سعر
+      </button>
+      <div class="flex justify-center gap-4">
+        <a href="#" class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-white/60 hover:bg-primary-container hover:text-on-primary-container transition-all" aria-label="الموقع">
+          <span class="material-symbols-outlined text-lg" aria-hidden="true">public</span>
+        </a>
+        <a href="#" class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-white/60 hover:bg-primary-container hover:text-on-primary-container transition-all" aria-label="البريد">
+          <span class="material-symbols-outlined text-lg" aria-hidden="true">alternate_email</span>
+        </a>
+        <a href="#" class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-white/60 hover:bg-primary-container hover:text-on-primary-container transition-all" aria-label="الهاتف">
+          <span class="material-symbols-outlined text-lg" aria-hidden="true">call</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="pt-20">
+<!-- SECTIONS WILL BE ADDED IN SUBSEQUENT TASKS -->
+</main>
+
+<script src="js/main.js"></script>
+</body>
+</html>
