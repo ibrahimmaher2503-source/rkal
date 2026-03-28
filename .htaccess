@@ -1,0 +1,8 @@
+ErrorDocument 404 /404.php
+
+# Deny direct access to sensitive directories (backup — each dir also has own .htaccess)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^config/ - [F,L]
+    RewriteRule ^sql/ - [F,L]
+</IfModule>
