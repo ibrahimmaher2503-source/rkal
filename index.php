@@ -34,7 +34,23 @@ require_once 'includes/header.php';
     <div class="relative group hidden md:block">
       <div class="absolute inset-0 bg-sand-gold/5 rounded-full blur-3xl animate-pulse z-0"></div>
       <div class="relative glass-panel p-4 rounded-[2.5rem] border-white/5 shadow-2xl overflow-hidden">
-        <img class="w-full h-[300px] md:h-[550px] object-cover rounded-[2rem] opacity-80 group-hover:opacity-100 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0Pz3BshD1sduTMLJuzPWYNqO_xtin3Mvk8i76X7qaP7T8_0fIqKuLZ8igjZDViNGc6FlA-NwAQHyUhrexYEXI9oQ7gKSjxb3THquslg3L7m8Ew1XjypTNy4NG0SQvQiMsyT5yE294Jk0KjzlXMAwLeanaSIBqJa2YHdr-p_13Mold54fOknZSFEE1sbSOxZWXaFOV0KNAUnkgUqZrg2_JB5ycSGl1XPgwWjRmxhvQK1ajV-SUv4fZxGfDFmHzRgktMoM04GZAXO5D" alt="أفق مدينة الرياض الحديث مع مركز الملك عبدالله المالي"/>
+        <div class="hero-visual w-full h-[300px] md:h-[550px] rounded-[2rem] opacity-80 group-hover:opacity-100 transition-all duration-700 relative overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-primary-container/20 via-surface-container/80 to-sand-gold/10"></div>
+          <div class="absolute inset-0 circuit-bg opacity-80"></div>
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[400px] md:h-[400px]">
+            <div class="absolute inset-0 rounded-full border border-primary-container/20 animate-[spin_30s_linear_infinite]"></div>
+            <div class="absolute inset-8 rounded-full border border-sand-gold/15 animate-[spin_20s_linear_infinite_reverse]"></div>
+            <div class="absolute inset-16 rounded-full border border-primary-container/10 animate-[spin_25s_linear_infinite]"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="material-symbols-outlined text-[120px] md:text-[160px] text-primary-container/30" style="font-variation-settings: 'FILL' 1, 'wght' 200;">rocket_launch</span>
+            </div>
+          </div>
+          <div class="absolute bottom-8 right-8 flex gap-3">
+            <div class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></div>
+            <div class="w-2 h-2 rounded-full bg-sand-gold animate-pulse" style="animation-delay:0.3s"></div>
+            <div class="w-2 h-2 rounded-full bg-primary-container animate-pulse" style="animation-delay:0.6s"></div>
+          </div>
+        </div>
         <div class="absolute top-12 right-12 glass-panel p-6 rounded-2xl border-sand-gold/30 shadow-2xl animate-slow-bounce z-20">
           <span class="material-symbols-outlined text-sand-gold text-4xl" aria-hidden="true">auto_awesome</span>
         </div>
@@ -442,7 +458,22 @@ require_once 'includes/header.php';
   <div class="max-w-screen-2xl mx-auto flex flex-col lg:flex-row gap-16 items-center relative z-10">
     <div class="w-full lg:w-1/2 relative order-2 lg:order-1 reveal-left">
       <div class="absolute -inset-4 border border-sand-gold/20 rounded-[3rem] -z-10 translate-x-4 translate-y-4"></div>
-      <img class="rounded-[3rem] shadow-2xl border-4 border-white/5 object-cover w-full h-[350px] md:h-[600px]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy5uhrwQr6I7NNkaSKXwgs8DeaHfZPGC3Umaq9dyjlwDiyiSDxVSMG5-s_nSzKSLP6Vhg3BldK5lFz05j6M64-QLk7q8fWpp39aX7PiDsgRgYVAHG_DlL07khPxBo3Ec2MU0_YvipbgJNcL_Ogl9mG99_Sl69WdicPgsLUXACgYsT3-E9SxhNWyQuw4MIsbL83sknFoYvghxTLkE6sdyrdOt4n5sIHtEi1dnIcUvq_wKDT5DBvrtqzekAz2Q1Brnw795N8ah9KMQcd" alt="بيئة عمل تقنية حديثة في الرياض"/>
+      <div class="rounded-[3rem] shadow-2xl border-4 border-white/5 w-full h-[350px] md:h-[600px] relative overflow-hidden bg-surface-container">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-container/15 via-transparent to-sand-gold/10"></div>
+        <div class="absolute inset-0 circuit-bg opacity-60"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="text-center space-y-6">
+            <div class="w-24 h-24 mx-auto rounded-2xl bg-primary-container/10 border border-primary-container/20 flex items-center justify-center">
+              <span class="material-symbols-outlined text-5xl text-primary-container" style="font-variation-settings: 'FILL' 1, 'wght' 300;">apartment</span>
+            </div>
+            <div>
+              <div class="text-white/40 text-sm font-bold tracking-widest uppercase">Riyadh Tech Hub</div>
+              <div class="text-white/20 text-xs mt-1">بيئة عمل تقنية حديثة</div>
+            </div>
+          </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-surface-container to-transparent"></div>
+      </div>
     </div>
     <div class="w-full lg:w-1/2 space-y-10 text-right order-1 lg:order-2 reveal-right">
       <div class="space-y-4">

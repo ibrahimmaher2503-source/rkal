@@ -65,11 +65,22 @@ require_once 'includes/header.php';
     <!-- Image — left column in RTL -->
     <div class="reveal-left relative order-2">
       <div class="absolute -inset-4 border border-sand-gold/20 rounded-[3rem] -z-10 translate-x-4 translate-y-4"></div>
-      <img
-        class="rounded-[3rem] shadow-2xl border-4 border-white/5 object-cover w-full h-[280px] md:h-[500px]"
-        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy5uhrwQr6I7NNkaSKXwgs8DeaHfZPGC3Umaq9dyjlwDiyiSDxVSMG5-s_nSzKSLP6Vhg3BldK5lFz05j6M64-QLk7q8fWpp39aX7PiDsgRgYVAHG_DlL07khPxBo3Ec2MU0_YvipbgJNcL_Ogl9mG99_Sl69WdicPgsLUXACgYsT3-E9SxhNWyQuw4MIsbL83sknFoYvghxTLkE6sdyrdOt4n5sIHtEi1dnIcUvq_wKDT5DBvrtqzekAz2Q1Brnw795N8ah9KMQcd"
-        alt="مكتب ركال في الرياض — بيئة عمل تقنية حديثة"
-      />
+      <div class="rounded-[3rem] shadow-2xl border-4 border-white/5 w-full h-[280px] md:h-[500px] relative overflow-hidden bg-surface-container">
+        <div class="absolute inset-0 bg-gradient-to-br from-sand-gold/15 via-transparent to-primary-container/10"></div>
+        <div class="absolute inset-0 circuit-bg opacity-60"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="text-center space-y-6">
+            <div class="w-20 h-20 mx-auto rounded-2xl bg-sand-gold/10 border border-sand-gold/20 flex items-center justify-center">
+              <span class="material-symbols-outlined text-5xl text-sand-gold" style="font-variation-settings: 'FILL' 1, 'wght' 300;">groups</span>
+            </div>
+            <div>
+              <div class="text-white/40 text-sm font-bold tracking-widest uppercase">Our Team</div>
+              <div class="text-white/20 text-xs mt-1">فريق ركال التقني</div>
+            </div>
+          </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-surface-container to-transparent"></div>
+      </div>
     </div>
   </div>
 </section>

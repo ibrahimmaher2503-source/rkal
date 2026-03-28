@@ -26,8 +26,8 @@ if (!function_exists('e')) {
  */
 function navClass(string $page, string $activePage): string {
     return $activePage === $page
-        ? 'nav-link active text-[#00f2ff]'
-        : 'nav-link text-white/60';
+        ? 'nav-link-pill active'
+        : 'nav-link-pill';
 }
 
 /**
@@ -125,25 +125,33 @@ function drawerClass(string $page, string $activePage): string {
 <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:right-4 focus:z-[100] focus:bg-primary-container focus:text-on-primary-fixed focus:px-4 focus:py-2 focus:rounded-xl focus:font-bold">انتقل إلى المحتوى</a>
 
 <!-- Navbar -->
-<nav id="navbar" class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/5 shadow-[0_20px_40px_rgba(0,242,255,0.08)]">
-  <div class="flex justify-between items-center px-6 md:px-10 py-3.5 max-w-screen-2xl mx-auto text-sm font-medium">
+<nav id="navbar" class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-2xl border-b border-white/[0.04] transition-all duration-500" style="box-shadow: 0 1px 40px rgba(0,242,255,0.04), 0 0 80px rgba(0,0,0,0.3);">
+  <div class="flex justify-between items-center px-5 md:px-10 py-2.5 max-w-screen-2xl mx-auto text-sm font-medium">
+    <!-- Logo -->
+    <a href="index.php" class="flex items-center gap-3 group">
+      <img src="logo.png" alt="ركال" class="h-14 w-auto transition-transform duration-300 group-hover:scale-105" />
+    </a>
+    <!-- Desktop Nav Links -->
+    <div class="hidden md:flex items-center">
+      <div class="flex gap-1 items-center bg-surface-container/40 rounded-2xl px-2 py-1.5 border border-white/[0.04]">
+        <a class="<?= navClass('index',     $activePage) ?>" href="index.php">الرئيسية</a>
+        <a class="<?= navClass('about',     $activePage) ?>" href="about.php">من نحن</a>
+        <a class="<?= navClass('services',  $activePage) ?>" href="services.php">خدماتنا</a>
+        <a class="<?= navClass('solutions', $activePage) ?>" href="solutions.php">الحلول</a>
+        <a class="<?= navClass('blog',      $activePage) ?>" href="blog.php">المدونة</a>
+        <a class="<?= navClass('contact',   $activePage) ?>" href="contact.php">تواصل معنا</a>
+      </div>
+    </div>
+    <!-- CTA + Hamburger -->
     <div class="flex items-center gap-3">
-      <img src="logo.png" alt="ركال" class="h-16 w-auto" />
+      <button class="hidden md:flex items-center gap-2 cta-btn text-on-primary-fixed px-5 py-2.5 rounded-xl font-bold text-sm transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,242,255,0.3)] hover:scale-[1.02]" style="background: linear-gradient(135deg, #00f2ff 0%, #00bcd4 100%);">
+        <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_back</span>
+        اطلب عرض سعر
+      </button>
+      <button id="hamburger-btn" class="md:hidden text-white/70 hover:text-white p-2.5 rounded-xl hover:bg-white/5 transition-all" aria-label="القائمة" aria-expanded="false">
+        <span class="material-symbols-outlined text-2xl">menu</span>
+      </button>
     </div>
-    <div class="hidden md:flex gap-7 items-center">
-      <a class="<?= navClass('index',     $activePage) ?>" href="index.php">الرئيسية</a>
-      <a class="<?= navClass('about',     $activePage) ?>" href="about.php">من نحن</a>
-      <a class="<?= navClass('services',  $activePage) ?>" href="services.php">خدماتنا</a>
-      <a class="<?= navClass('solutions', $activePage) ?>" href="solutions.php">الحلول</a>
-      <a class="<?= navClass('blog',      $activePage) ?>" href="blog.php">المدونة</a>
-      <a class="<?= navClass('contact',   $activePage) ?>" href="contact.php">تواصل معنا</a>
-    </div>
-    <button class="hidden md:block cta-btn tech-gradient text-on-primary-fixed px-6 py-2.5 rounded-xl font-bold">
-      اطلب عرض سعر
-    </button>
-    <button id="hamburger-btn" class="md:hidden text-white p-2" aria-label="القائمة" aria-expanded="false">
-      <span class="material-symbols-outlined text-2xl">menu</span>
-    </button>
   </div>
 </nav>
 
@@ -154,8 +162,10 @@ function drawerClass(string $page, string $activePage): string {
 <div id="mobile-drawer" class="drawer-panel bg-surface-container" role="dialog" aria-modal="true" aria-hidden="true">
   <div class="flex flex-col h-full p-8">
     <div class="flex justify-between items-center mb-10">
-      <img src="logo.png" alt="ركال" class="h-16 w-auto" />
-      <button id="drawer-close-btn" class="text-white/60 hover:text-white" aria-label="إغلاق القائمة">
+      <a href="index.php" class="flex items-center gap-3">
+        <img src="logo.png" alt="ركال" class="h-14 w-auto" />
+      </a>
+      <button id="drawer-close-btn" class="text-white/60 hover:text-white w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center transition-all hover:bg-white/10" aria-label="إغلاق القائمة">
         <span class="material-symbols-outlined">close</span>
       </button>
     </div>
