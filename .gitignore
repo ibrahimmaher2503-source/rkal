@@ -1,3 +1,4 @@
 config/database.php
-uploads/*
+uploads/**
+!uploads/blog/
 !uploads/blog/.gitkeep
