@@ -269,8 +269,8 @@ require_once 'includes/header.php';
         <h2 class="text-2xl sm:text-4xl md:text-5xl font-headline font-bold mb-8 leading-tight text-white">جاهز للعمل مع شريك تقني يفهم احتياجاتك؟</h2>
         <p class="text-on-surface-variant text-lg mb-12">فريقنا التقني مستعد لتحويل تحدياتك إلى فرص نمو حقيقية. ابدأ رحلتك الرقمية اليوم.</p>
         <div class="flex flex-col md:flex-row justify-center gap-6">
-          <a href="/contact" class="tech-gradient text-on-primary-fixed px-12 py-5 rounded-2xl font-bold text-lg hover:shadow-[0_0_50px_rgba(0,242,255,0.4)] transition-all active:scale-95">تواصل معنا</a>
-          <a href="/contact" class="bg-white/5 border border-white/10 text-white px-12 py-5 rounded-2xl font-bold text-lg hover:bg-white/10 transition-all">اطلب عرض سعر</a>
+          <a href="<?= url('/contact') ?>" class="tech-gradient text-on-primary-fixed px-12 py-5 rounded-2xl font-bold text-lg hover:shadow-[0_0_50px_rgba(0,242,255,0.4)] transition-all active:scale-95">تواصل معنا</a>
+          <a href="<?= url('/contact') ?>" class="bg-white/5 border border-white/10 text-white px-12 py-5 rounded-2xl font-bold text-lg hover:bg-white/10 transition-all">اطلب عرض سعر</a>
         </div>
       </div>
     </div>

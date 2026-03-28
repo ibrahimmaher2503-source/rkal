@@ -410,7 +410,7 @@ require_once 'includes/header.php';
 
         <!-- Category Pills -->
         <div class="flex gap-2.5 overflow-x-auto pb-1 flex-1 w-full scrollbar-none">
-          <a href="/blog<?= $search ? '?q=' . urlencode($search) : '' ?>"
+          <a href="<?= url('/blog') ?><?= $search ? '?q=' . urlencode($search) : '' ?>"
              class="cat-pill <?= $category === '' ? 'cat-pill-active' : 'cat-pill-inactive' ?>">
             <span class="material-symbols-outlined cat-pill-icon" aria-hidden="true">grid_view</span>
             الكل
@@ -425,7 +425,7 @@ require_once 'includes/header.php';
           ];
           foreach ($categories as $cat => $catIcon):
               $isActive = ($category === $cat);
-              $href = '/blog?category=' . urlencode($cat) . ($search ? '&q=' . urlencode($search) : '');
+              $href = url('/blog') . '?category=' . urlencode($cat) . ($search ? '&q=' . urlencode($search) : '');
           ?>
           <a href="<?= e($href) ?>"
              class="cat-pill <?= $isActive ? 'cat-pill-active' : 'cat-pill-inactive' ?>">
@@ -455,7 +455,7 @@ require_once 'includes/header.php';
         <div class="flex-1 h-[1px] bg-gradient-to-l from-transparent to-sand-gold/10 mr-4"></div>
       </div>
 
-      <a href="/blog/<?= urlencode($featured['slug']) ?>" class="block featured-cinematic group reveal">
+      <a href="<?= url('/blog/' . urlencode($featured['slug'])) ?>" class="block featured-cinematic group reveal">
         <div class="relative min-h-[320px] md:min-h-[480px]">
           <!-- Image -->
           <div class="absolute inset-0 overflow-hidden rounded-[2rem]">
@@ -567,7 +567,7 @@ require_once 'includes/header.php';
         </div>
         <p class="text-xl font-black text-white/30 mb-2">لا توجد مقالات مطابقة</p>
         <p class="text-sm text-on-surface-variant/40 max-w-sm mx-auto mb-8">جرّب تغيير كلمات البحث أو اختيار تصنيف آخر</p>
-        <a href="/blog" class="inline-flex items-center gap-2 text-primary-container text-sm font-bold hover:gap-3 transition-all bg-primary-container/8 border border-primary-container/15 px-6 py-3 rounded-xl">
+        <a href="<?= url('/blog') ?>" class="inline-flex items-center gap-2 text-primary-container text-sm font-bold hover:gap-3 transition-all bg-primary-container/8 border border-primary-container/15 px-6 py-3 rounded-xl">
           <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
           عرض جميع المقالات
         </a>
@@ -590,7 +590,7 @@ require_once 'includes/header.php';
           // First card: horizontal layout
           if ($i === 0):
         ?>
-        <a href="/blog/<?= urlencode($post['slug']) ?>" class="block blog-card-horizontal group reveal">
+        <a href="<?= url('/blog/' . urlencode($post['slug'])) ?>" class="block blog-card-horizontal group reveal">
           <div class="grid grid-cols-1 md:grid-cols-12 gap-0">
             <!-- Image — 5 cols -->
             <div class="relative aspect-video md:aspect-auto md:col-span-5 overflow-hidden bg-surface-container-high">
@@ -653,7 +653,7 @@ require_once 'includes/header.php';
           else: // Standard card for index > 0
         ?>
         <article class="blog-card-v2 <?= $isGold ? 'gold-accent' : '' ?> reveal group">
-          <a href="/blog/<?= urlencode($post['slug']) ?>" class="flex flex-col h-full">
+          <a href="<?= url('/blog/' . urlencode($post['slug'])) ?>" class="flex flex-col h-full">
             <!-- Image area -->
             <div class="card-img-wrap relative aspect-[16/10]">
               <div class="card-img-inner absolute inset-0">
@@ -723,7 +723,7 @@ require_once 'includes/header.php';
         $nextParams = ['page' => $nextPage];
         if ($category) $nextParams['category'] = $category;
         if ($search)   $nextParams['q']        = $search;
-        $nextUrl = '/blog?' . http_build_query($nextParams);
+        $nextUrl = url('/blog') . '?' . http_build_query($nextParams);
       ?>
       <div class="flex justify-center mt-14">
         <a href="<?= e($nextUrl) ?>" class="load-more-btn inline-flex items-center gap-3 bg-surface-container/60 border border-white/8 text-white px-8 py-4 rounded-2xl font-bold transition-all duration-400 group">
@@ -761,11 +761,11 @@ require_once 'includes/header.php';
           </p>
 
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/contact" class="cta-btn tech-gradient text-on-primary-fixed px-8 py-4 rounded-xl font-bold text-lg inline-flex items-center justify-center gap-2">
+            <a href="<?= url('/contact') ?>" class="cta-btn tech-gradient text-on-primary-fixed px-8 py-4 rounded-xl font-bold text-lg inline-flex items-center justify-center gap-2">
               <span class="material-symbols-outlined text-xl" aria-hidden="true">chat</span>
               تواصل مع فريقنا
             </a>
-            <a href="/contact" class="bg-white/5 border border-white/10 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 hover:border-white/15 transition-all duration-300 inline-flex items-center justify-center gap-2">
+            <a href="<?= url('/contact') ?>" class="bg-white/5 border border-white/10 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 hover:border-white/15 transition-all duration-300 inline-flex items-center justify-center gap-2">
               <span class="material-symbols-outlined text-xl" aria-hidden="true">description</span>
               اطلب عرض سعر
             </a>

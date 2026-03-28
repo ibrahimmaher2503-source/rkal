@@ -10,6 +10,19 @@
 if (!isset($pageTitle))  $pageTitle  = 'ركال | حلول برمجية وطنية ذكية';
 if (!isset($activePage)) $activePage = '';
 
+// Ensure SITE_BASE and url() are available even if functions.php wasn't loaded
+if (!defined('SITE_BASE')) {
+    $scriptDir = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME']));
+    $base = rtrim(preg_replace('#/(includes|admin(/includes)?)$#', '', $scriptDir), '/');
+    define('SITE_BASE', $base);
+}
+if (!function_exists('url')) {
+    function url(string $path = '/'): string {
+        if ($path === '/') return SITE_BASE . '/';
+        return SITE_BASE . '/' . ltrim($path, '/');
+    }
+}
+
 /**
  * Escape helper — outputs HTML-safe string.
  * Defined here only if not already defined (so it won't clash if header is
@@ -117,7 +130,7 @@ function drawerClass(string $page, string $activePage): string {
       },
     }
   </script>
-  <link rel="stylesheet" href="css/styles.css"/>
+  <link rel="stylesheet" href="<?= url('/css/styles.css') ?>"/>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary-container/30 overflow-x-hidden sadu-pattern">
 
@@ -128,18 +141,18 @@ function drawerClass(string $page, string $activePage): string {
 <nav id="navbar" class="fixed top-0 w-full z-50 backdrop-blur-2xl border-b border-white/[0.04] transition-all duration-500" style="background-color: #071426; box-shadow: 0 1px 40px rgba(0,242,255,0.04), 0 0 80px rgba(0,0,0,0.3);">
   <div class="flex justify-between items-center py-2.5 text-sm font-medium">
     <!-- Logo -->
-    <a href="/" class="flex items-center gap-3 group">
-      <img src="logo.png" alt="ركال" class="h-20 w-auto transition-transform duration-300 group-hover:scale-105" />
+    <a href="<?= url('/') ?>" class="flex items-center gap-3 group">
+      <img src="<?= url('/logo.png') ?>" alt="ركال" class="h-20 w-auto transition-transform duration-300 group-hover:scale-105" />
     </a>
     <!-- Desktop Nav Links -->
     <div class="hidden md:flex items-center">
       <div class="flex gap-1 items-center bg-surface-container/40 rounded-2xl px-2 py-1.5 border border-white/[0.04]">
-        <a class="<?= navClass('index',     $activePage) ?>" href="/">الرئيسية</a>
-        <a class="<?= navClass('about',     $activePage) ?>" href="/about">من نحن</a>
-        <a class="<?= navClass('services',  $activePage) ?>" href="/services">خدماتنا</a>
-        <a class="<?= navClass('solutions', $activePage) ?>" href="/solutions">الحلول</a>
-        <a class="<?= navClass('blog',      $activePage) ?>" href="/blog">المدونة</a>
-        <a class="<?= navClass('contact',   $activePage) ?>" href="/contact">تواصل معنا</a>
+        <a class="<?= navClass('index',     $activePage) ?>" href="<?= url('/') ?>">الرئيسية</a>
+        <a class="<?= navClass('about',     $activePage) ?>" href="<?= url('/about') ?>">من نحن</a>
+        <a class="<?= navClass('services',  $activePage) ?>" href="<?= url('/services') ?>">خدماتنا</a>
+        <a class="<?= navClass('solutions', $activePage) ?>" href="<?= url('/solutions') ?>">الحلول</a>
+        <a class="<?= navClass('blog',      $activePage) ?>" href="<?= url('/blog') ?>">المدونة</a>
+        <a class="<?= navClass('contact',   $activePage) ?>" href="<?= url('/contact') ?>">تواصل معنا</a>
       </div>
     </div>
     <!-- CTA + Hamburger -->
@@ -162,20 +175,20 @@ function drawerClass(string $page, string $activePage): string {
 <div id="mobile-drawer" class="drawer-panel bg-surface-container" role="dialog" aria-modal="true" aria-hidden="true">
   <div class="flex flex-col h-full p-8">
     <div class="flex justify-between items-center mb-10">
-      <a href="/" class="flex items-center gap-3">
-        <img src="logo.png" alt="ركال" class="h-20 w-auto" />
+      <a href="<?= url('/') ?>" class="flex items-center gap-3">
+        <img src="<?= url('/logo.png') ?>" alt="ركال" class="h-20 w-auto" />
       </a>
       <button id="drawer-close-btn" class="text-white/60 hover:text-white w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center transition-all hover:bg-white/10" aria-label="إغلاق القائمة">
         <span class="material-symbols-outlined">close</span>
       </button>
     </div>
     <nav class="flex flex-col gap-1 flex-1">
-      <a href="/"          class="<?= drawerClass('index',     $activePage) ?>">الرئيسية</a>
-      <a href="/about"     class="<?= drawerClass('about',     $activePage) ?>">من نحن</a>
-      <a href="/services"  class="<?= drawerClass('services',  $activePage) ?>">خدماتنا</a>
-      <a href="/solutions" class="<?= drawerClass('solutions', $activePage) ?>">الحلول</a>
-      <a href="/blog"      class="<?= drawerClass('blog',      $activePage) ?>">المدونة</a>
-      <a href="/contact"   class="<?= drawerClass('contact',   $activePage) ?>">تواصل معنا</a>
+      <a href="<?= url('/') ?>"          class="<?= drawerClass('index',     $activePage) ?>">الرئيسية</a>
+      <a href="<?= url('/about') ?>"     class="<?= drawerClass('about',     $activePage) ?>">من نحن</a>
+      <a href="<?= url('/services') ?>"  class="<?= drawerClass('services',  $activePage) ?>">خدماتنا</a>
+      <a href="<?= url('/solutions') ?>" class="<?= drawerClass('solutions', $activePage) ?>">الحلول</a>
+      <a href="<?= url('/blog') ?>"      class="<?= drawerClass('blog',      $activePage) ?>">المدونة</a>
+      <a href="<?= url('/contact') ?>"   class="<?= drawerClass('contact',   $activePage) ?>">تواصل معنا</a>
     </nav>
     <div class="mt-auto space-y-6">
       <button class="w-full tech-gradient text-on-primary-fixed py-4 rounded-xl font-bold text-lg">

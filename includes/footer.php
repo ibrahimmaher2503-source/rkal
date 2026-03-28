@@ -4,7 +4,7 @@
   <div class="sadu-pattern">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-12 py-20 text-right">
       <div class="space-y-6">
-        <img src="logo.png" alt="ركال" class="h-36 w-auto" />
+        <img src="<?= url('/logo.png') ?>" alt="ركال" class="h-36 w-auto" />
         <p class="text-sm leading-relaxed text-white/50">شركة سعودية رائدة متخصصة في حلول التحول الرقمي والهندسة البرمجية المتقدمة. ملتزمون بتمكين رؤية المملكة ٢٠٣٠ من خلال التميز التقني.</p>
         <div class="flex gap-4 justify-end">
           <a href="#" class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-white/60 hover:bg-primary-container hover:text-on-primary-container transition-all" aria-label="الموقع"><span class="material-symbols-outlined" aria-hidden="true">public</span></a>
@@ -15,22 +15,22 @@
       <div>
         <h4 class="text-white font-bold mb-8 text-xl">روابط سريعة</h4>
         <ul class="space-y-5 text-sm">
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="/">الرئيسية</a></li>
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="/about">من نحن</a></li>
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="/services">خدماتنا</a></li>
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="/solutions">الحلول</a></li>
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="/contact">تواصل معنا</a></li>
+          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="<?= url('/') ?>">الرئيسية</a></li>
+          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="<?= url('/about') ?>">من نحن</a></li>
+          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="<?= url('/services') ?>">خدماتنا</a></li>
+          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="<?= url('/solutions') ?>">الحلول</a></li>
+          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="<?= url('/contact') ?>">تواصل معنا</a></li>
         </ul>
       </div>
       <div>
         <h4 class="text-white font-bold mb-8 text-xl">خدماتنا</h4>
         <ul class="space-y-5 text-sm">
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="/services">تطوير المواقع</a></li>
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="/services">تطبيقات الجوال</a></li>
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="/services">أنظمة ERP</a></li>
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="/services">المتاجر الإلكترونية</a></li>
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="/services">الذكاء الاصطناعي</a></li>
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="/services">التسويق الرقمي</a></li>
+          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="<?= url('/services') ?>">تطوير المواقع</a></li>
+          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="<?= url('/services') ?>">تطبيقات الجوال</a></li>
+          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="<?= url('/services') ?>">أنظمة ERP</a></li>
+          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="<?= url('/services') ?>">المتاجر الإلكترونية</a></li>
+          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="<?= url('/services') ?>">الذكاء الاصطناعي</a></li>
+          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="<?= url('/services') ?>">التسويق الرقمي</a></li>
         </ul>
       </div>
       <div class="space-y-6">
@@ -53,6 +53,6 @@
   </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="<?= url('/js/main.js') ?>"></script>
 </body>
 </html>

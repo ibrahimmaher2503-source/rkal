@@ -231,7 +231,7 @@ $totalServices = count($services);
             <span>استكشف خدماتنا</span>
             <span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_downward</span>
           </a>
-          <a href="/contact" class="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-white px-8 py-4 rounded-2xl font-bold text-base hover:bg-white/10 hover:border-white/20 transition-all">
+          <a href="<?= url('/contact') ?>" class="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-white px-8 py-4 rounded-2xl font-bold text-base hover:bg-white/10 hover:border-white/20 transition-all">
             <span>اطلب استشارة</span>
             <span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_back</span>
           </a>
@@ -368,7 +368,7 @@ $totalServices = count($services);
               <?php endif; ?>
 
               <!-- CTA link -->
-              <a href="/services/<?= e($service['slug']) ?>"
+              <a href="<?= url('/services/' . e($service['slug'])) ?>"
                  class="srv-arrow inline-flex items-center gap-2.5 <?= $colorText ?> text-sm font-bold group/link">
                 <span class="relative">
                   اكتشف التفاصيل
@@ -462,11 +462,11 @@ $totalServices = count($services);
           فريقنا التقني جاهز لتحليل احتياجاتك وتقديم الحل المثالي. تواصل معنا واحصل على استشارة مجانية.
         </p>
         <div class="reveal flex flex-col sm:flex-row justify-center gap-5">
-          <a href="/contact" class="inline-flex items-center justify-center gap-2 tech-gradient text-on-primary-fixed px-10 py-4.5 rounded-2xl font-bold text-lg hover:shadow-[0_0_50px_rgba(0,242,255,0.35)] transition-all active:scale-[0.97]">
+          <a href="<?= url('/contact') ?>" class="inline-flex items-center justify-center gap-2 tech-gradient text-on-primary-fixed px-10 py-4.5 rounded-2xl font-bold text-lg hover:shadow-[0_0_50px_rgba(0,242,255,0.35)] transition-all active:scale-[0.97]">
             <span class="material-symbols-outlined" aria-hidden="true">chat</span>
             تواصل معنا
           </a>
-          <a href="/contact" class="inline-flex items-center justify-center gap-2 bg-white/5 border border-white/10 text-white px-10 py-4.5 rounded-2xl font-bold text-lg hover:bg-white/10 hover:border-white/20 transition-all">
+          <a href="<?= url('/contact') ?>" class="inline-flex items-center justify-center gap-2 bg-white/5 border border-white/10 text-white px-10 py-4.5 rounded-2xl font-bold text-lg hover:bg-white/10 hover:border-white/20 transition-all">
             <span class="material-symbols-outlined" aria-hidden="true">description</span>
             اطلب عرض سعر
           </a>

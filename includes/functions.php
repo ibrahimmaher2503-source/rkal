@@ -2,6 +2,22 @@
 require_once __DIR__ . '/../config/database.php';
 
 // ---------------------------------------------------------------------------
+// 0. Site base path (auto-detect from script location)
+// ---------------------------------------------------------------------------
+if (!defined('SITE_BASE')) {
+    $scriptDir = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME']));
+    // Walk up from includes/ or admin/ subdirectories to find the real base
+    $base = rtrim(preg_replace('#/(includes|admin(/includes)?)$#', '', $scriptDir), '/');
+    define('SITE_BASE', $base);
+}
+
+/** Return a full path relative to the site root. url('/about') → '/rkal/about' */
+function url(string $path = '/'): string {
+    if ($path === '/') return SITE_BASE . '/';
+    return SITE_BASE . '/' . ltrim($path, '/');
+}
+
+// ---------------------------------------------------------------------------
 // 1. Database singleton
 // ---------------------------------------------------------------------------
 function getDB(): PDO {
