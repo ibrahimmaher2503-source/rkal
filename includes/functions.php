@@ -229,3 +229,16 @@ function clearLoginAttempts(string $ip): void {
     $file = $dir . '/' . md5($ip) . '.json';
     if (file_exists($file)) { @unlink($file); }
 }
+
+// ---------------------------------------------------------------------------
+// 14. Render 404 page and exit
+// ---------------------------------------------------------------------------
+/**
+ * Set 404 status, render the error page, and stop execution.
+ * Centralises all not-found handling so every caller behaves identically.
+ */
+function render404(): never {
+    http_response_code(404);
+    require_once __DIR__ . '/../404.php';
+    exit;
+}

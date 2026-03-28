@@ -2,14 +2,14 @@
 require_once 'includes/functions.php';
 
 $slug = $_GET['slug'] ?? '';
-if (!$slug) { http_response_code(404); require_once '404.php'; exit; }
+if (!$slug) { render404(); }
 
 $db = getDB();
 $stmt = $db->prepare('SELECT * FROM services WHERE slug = :slug AND is_active = 1');
 $stmt->execute(['slug' => $slug]);
 $service = $stmt->fetch();
 
-if (!$service) { http_response_code(404); require_once '404.php'; exit; }
+if (!$service) { render404(); }
 
 // Decode JSON columns
 $subservices      = json_decode($service['subservices'],      true) ?: [];

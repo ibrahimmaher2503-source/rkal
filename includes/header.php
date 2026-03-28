@@ -126,10 +126,10 @@ function drawerClass(string $page, string $activePage): string {
 
 <!-- Navbar -->
 <nav id="navbar" class="fixed top-0 w-full z-50 backdrop-blur-2xl border-b border-white/[0.04] transition-all duration-500" style="background-color: #071426; box-shadow: 0 1px 40px rgba(0,242,255,0.04), 0 0 80px rgba(0,0,0,0.3);">
-  <div class="flex justify-between items-center px-5 md:px-10 py-2.5 max-w-screen-2xl mx-auto text-sm font-medium">
+  <div class="flex justify-between items-center py-2.5 text-sm font-medium">
     <!-- Logo -->
     <a href="index.php" class="flex items-center gap-3 group">
-      <img src="logo.png" alt="ركال" class="h-14 w-auto transition-transform duration-300 group-hover:scale-105" />
+      <img src="logo.png" alt="ركال" class="h-20 w-auto transition-transform duration-300 group-hover:scale-105" />
     </a>
     <!-- Desktop Nav Links -->
     <div class="hidden md:flex items-center">
@@ -163,7 +163,7 @@ function drawerClass(string $page, string $activePage): string {
   <div class="flex flex-col h-full p-8">
     <div class="flex justify-between items-center mb-10">
       <a href="index.php" class="flex items-center gap-3">
-        <img src="logo.png" alt="ركال" class="h-14 w-auto" />
+        <img src="logo.png" alt="ركال" class="h-20 w-auto" />
       </a>
       <button id="drawer-close-btn" class="text-white/60 hover:text-white w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center transition-all hover:bg-white/10" aria-label="إغلاق القائمة">
         <span class="material-symbols-outlined">close</span>
