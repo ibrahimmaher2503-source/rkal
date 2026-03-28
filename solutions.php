@@ -1,191 +1,43 @@
-<!DOCTYPE html>
-<html class="dark" dir="rtl" lang="ar">
-<head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>ركال | الحلول - حلول رقمية لكل قطاع</title>
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-  <script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "primary-fixed": "#74f5ff",
-            "surface-bright": "#323851",
-            "inverse-on-surface": "#292f48",
-            "on-primary-fixed-variant": "#004f54",
-            "tertiary-fixed-dim": "#4cd6ff",
-            "inverse-surface": "#dce1ff",
-            "primary-container": "#00f2ff",
-            "surface-dim": "#0b1229",
-            "surface-container-high": "#222941",
-            "on-error": "#690005",
-            "primary-fixed-dim": "#00dbe7",
-            "surface-variant": "#2d344c",
-            "error": "#ffb4ab",
-            "on-tertiary": "#003543",
-            "on-tertiary-fixed-variant": "#004e60",
-            "secondary-fixed-dim": "#bcc5ed",
-            "surface-container-lowest": "#060d24",
-            "surface-container-highest": "#2d344c",
-            "on-surface-variant": "#b9cacb",
-            "on-secondary-fixed-variant": "#3d4567",
-            "on-primary": "#00363a",
-            "surface-container": "#181e36",
-            "secondary-container": "#3d4567",
-            "outline": "#849495",
-            "inverse-primary": "#00696f",
-            "tertiary-fixed": "#b7eaff",
-            "on-primary-fixed": "#002022",
-            "secondary-fixed": "#dce1ff",
-            "on-tertiary-fixed": "#001f28",
-            "on-error-container": "#ffdad6",
-            "on-surface": "#dce1ff",
-            "on-secondary": "#262f4f",
-            "surface": "#0b1229",
-            "secondary": "#bcc5ed",
-            "primary": "#e1fdff",
-            "on-secondary-container": "#abb3db",
-            "surface-tint": "#00dbe7",
-            "surface-container-low": "#141a32",
-            "tertiary": "#eef9ff",
-            "on-background": "#dce1ff",
-            "error-container": "#93000a",
-            "outline-variant": "#3a494b",
-            "tertiary-container": "#a0e5ff",
-            "background": "#0b1229",
-            "on-primary-container": "#006a71",
-            "on-secondary-fixed": "#111a39",
-            "on-tertiary-container": "#006881",
-            "sand-gold": "#D4AF37"
-          },
-          fontFamily: {
-            "headline": ["IBM Plex Sans Arabic", "sans-serif"],
-            "body": ["IBM Plex Sans Arabic", "sans-serif"],
-            "label": ["IBM Plex Sans Arabic", "sans-serif"]
-          },
-          borderRadius: {
-            "DEFAULT": "0.125rem",
-            "lg": "0.25rem",
-            "xl": "0.5rem"
-          },
-        },
-      },
-    }
-  </script>
-  <link rel="stylesheet" href="css/styles.css"/>
-</head>
-<body class="bg-surface text-on-surface font-body selection:bg-primary-container/30 overflow-x-hidden sadu-pattern">
-
-<!-- Skip Link -->
-<a href="#solutions-hero" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:right-4 focus:z-[100] focus:bg-primary-container focus:text-on-primary-fixed focus:px-4 focus:py-2 focus:rounded-xl focus:font-bold">انتقل إلى المحتوى</a>
-
-<!-- Navbar -->
-<nav id="navbar" class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/5 shadow-[0_20px_40px_rgba(0,242,255,0.08)]">
-  <div class="flex flex-row-reverse justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto text-sm font-medium">
-    <div class="flex items-center gap-3">
-      <div class="text-2xl font-bold text-white tracking-tighter">رکال</div>
-      <div class="h-6 w-[1px] bg-white/10 hidden md:block"></div>
-      <div class="hidden md:flex items-center gap-1.5 text-[10px] text-sand-gold font-bold uppercase tracking-widest opacity-80">
-        <span>Vision</span>
-        <span class="bg-sand-gold/20 px-1 rounded">2030</span>
-      </div>
-    </div>
-    <div class="hidden md:flex flex-row-reverse gap-8 items-center">
-      <a class="text-white/70 hover:text-white transition-colors" href="index.html">الرئيسية</a>
-      <a class="text-white/70 hover:text-white transition-colors" href="about.html">من نحن</a>
-      <a class="text-white/70 hover:text-white transition-colors" href="services.html">خدماتنا</a>
-      <a class="text-[#00f2ff] border-b-2 border-[#00f2ff] pb-1" href="solutions.html">الحلول</a>
-      <a class="text-white/70 hover:text-white transition-colors" href="blog.html">المدونة</a>
-      <a class="text-white/70 hover:text-white transition-colors" href="contact.html">تواصل معنا</a>
-    </div>
-    <button class="hidden md:block tech-gradient text-on-primary-fixed px-6 py-2.5 rounded-xl font-bold hover:shadow-[0_0_15px_rgba(0,242,255,0.3)] transition-all duration-300">
-      اطلب عرض سعر
-    </button>
-    <button id="hamburger-btn" class="md:hidden text-white p-2" aria-label="القائمة" aria-expanded="false">
-      <span class="material-symbols-outlined text-2xl">menu</span>
-    </button>
-  </div>
-</nav>
-
-<!-- Mobile Drawer Overlay -->
-<div id="drawer-overlay" class="drawer-overlay"></div>
-
-<!-- Mobile Drawer Panel -->
-<div id="mobile-drawer" class="drawer-panel bg-surface-container" role="dialog" aria-modal="true" aria-hidden="true">
-  <div class="flex flex-col h-full p-8">
-    <div class="flex justify-between items-center mb-10">
-      <div class="text-2xl font-bold text-white">رکال</div>
-      <button id="drawer-close-btn" class="text-white/60 hover:text-white" aria-label="إغلاق القائمة">
-        <span class="material-symbols-outlined">close</span>
-      </button>
-    </div>
-    <nav class="flex flex-col gap-2 flex-1">
-      <a href="index.html" class="text-white/70 hover:text-white py-3 px-4 rounded-xl hover:bg-white/5 transition-all text-lg">الرئيسية</a>
-      <a href="about.html" class="text-white/70 hover:text-white py-3 px-4 rounded-xl hover:bg-white/5 transition-all text-lg">من نحن</a>
-      <a href="services.html" class="text-white/70 hover:text-white py-3 px-4 rounded-xl hover:bg-white/5 transition-all text-lg">خدماتنا</a>
-      <a href="solutions.html" class="text-[#00f2ff] font-bold py-3 px-4 rounded-xl bg-primary-container/5 text-lg">الحلول</a>
-      <a href="#" class="text-white/70 hover:text-white py-3 px-4 rounded-xl hover:bg-white/5 transition-all text-lg">المدونة</a>
-      <a href="contact.html" class="text-white/70 hover:text-white py-3 px-4 rounded-xl hover:bg-white/5 transition-all text-lg">تواصل معنا</a>
-    </nav>
-    <div class="mt-auto space-y-6">
-      <button class="w-full tech-gradient text-on-primary-fixed py-4 rounded-xl font-bold text-lg">
-        اطلب عرض سعر
-      </button>
-      <div class="flex justify-center gap-4">
-        <a href="#" class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-white/60 hover:bg-primary-container hover:text-on-primary-container transition-all" aria-label="الموقع">
-          <span class="material-symbols-outlined text-lg" aria-hidden="true">public</span>
-        </a>
-        <a href="#" class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-white/60 hover:bg-primary-container hover:text-on-primary-container transition-all" aria-label="البريد">
-          <span class="material-symbols-outlined text-lg" aria-hidden="true">alternate_email</span>
-        </a>
-        <a href="#" class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-white/60 hover:bg-primary-container hover:text-on-primary-container transition-all" aria-label="الهاتف">
-          <span class="material-symbols-outlined text-lg" aria-hidden="true">call</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<main class="pt-20">
+<?php
+$pageTitle = 'ركال | حلولنا - حلول رقمية لكل قطاع';
+$activePage = 'solutions';
+require_once 'includes/header.php';
+?>
 
   <!-- 1. Hero Banner -->
-  <section id="solutions-hero" class="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
+  <section id="solutions-hero" class="relative min-h-[50vh] flex items-center justify-center overflow-hidden hero-mesh">
     <!-- Sadu pattern overlay -->
     <div class="absolute inset-0 sadu-pattern opacity-40"></div>
     <!-- Glow accents -->
-    <div class="absolute top-0 right-1/4 w-96 h-96 bg-primary-container/10 rounded-full blur-[120px] pointer-events-none"></div>
-    <div class="absolute bottom-0 left-1/4 w-80 h-80 bg-sand-gold/8 rounded-full blur-[100px] pointer-events-none"></div>
+    <div class="absolute top-0 right-1/4 w-48 h-48 md:w-96 md:h-96 bg-primary-container/10 rounded-full blur-[120px] pointer-events-none floating-orb"></div>
+    <div class="absolute bottom-0 left-1/4 w-40 h-40 md:w-80 md:h-80 bg-sand-gold/8 rounded-full blur-[100px] pointer-events-none floating-orb"></div>
 
-    <div class="relative z-10 text-center px-6 max-w-4xl mx-auto py-24">
+    <div class="relative z-10 text-center px-4 md:px-6 max-w-4xl mx-auto py-24">
       <!-- Badge -->
-      <div class="inline-flex items-center gap-2 bg-primary-container/10 border border-primary-container/20 text-primary-container px-5 py-2 rounded-full text-sm font-bold mb-8 backdrop-blur-sm">
+      <div class="inline-flex items-center gap-2 bg-primary-container/10 border border-primary-container/20 text-primary-container px-5 py-2 rounded-full text-sm font-bold mb-8 backdrop-blur-sm reveal">
         <span class="material-symbols-outlined text-base" aria-hidden="true">grid_view</span>
         حلول القطاعات
       </div>
 
       <!-- Headline -->
-      <h1 class="text-4xl md:text-6xl font-black text-white leading-tight mb-6">
+      <h1 class="text-2xl sm:text-4xl md:text-6xl font-black text-white leading-tight mb-6 reveal">
         حلول رقمية مصممة لطبيعة
         <span class="tech-gradient bg-clip-text text-transparent block mt-2">قطاعك</span>
       </h1>
 
       <!-- Subtitle -->
-      <p class="text-lg md:text-xl text-white/60 leading-relaxed max-w-2xl mx-auto">
+      <p class="text-lg md:text-xl text-white/60 leading-relaxed max-w-2xl mx-auto reveal">
         نقدم حلولاً برمجية مخصصة لكل قطاع في المملكة العربية السعودية، مصممة لتلبية الاحتياجات الفريدة لكل صناعة ومتوافقة مع متطلبات التحول الرقمي ورؤية ٢٠٣٠.
       </p>
     </div>
   </section>
 
   <!-- 2. Industry Solutions Grid -->
-  <section class="py-32 px-6 max-w-screen-2xl mx-auto">
+  <section class="py-32 px-4 md:px-6 max-w-screen-2xl mx-auto section-glow">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
       <!-- Card 1: الشركات والمؤسسات -->
-      <div class="bg-surface-container rounded-[2rem] p-8 border border-white/5 hover:border-primary-container/20 transition-all group">
+      <div class="bg-surface-container rounded-[2rem] p-8 border border-white/5 hover:border-primary-container/20 transition-all group reveal card-hover">
         <div class="w-16 h-16 rounded-2xl bg-primary-container/15 flex items-center justify-center mb-6">
           <span class="material-symbols-outlined text-3xl text-primary-container" aria-hidden="true">domain</span>
         </div>
@@ -211,14 +63,14 @@
             لوحات التحليلات
           </li>
         </ul>
-        <a href="contact.html" class="inline-flex items-center gap-2 text-primary-container text-sm font-bold hover:gap-3 transition-all">
+        <a href="contact.php" class="inline-flex items-center gap-2 text-primary-container text-sm font-bold hover:gap-3 transition-all">
           اكتشف المزيد
           <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_back</span>
         </a>
       </div>
 
       <!-- Card 2: الجهات الحكومية -->
-      <div class="bg-surface-container rounded-[2rem] p-8 border border-white/5 hover:border-primary-container/20 transition-all group">
+      <div class="bg-surface-container rounded-[2rem] p-8 border border-white/5 hover:border-primary-container/20 transition-all group reveal card-hover">
         <div class="w-16 h-16 rounded-2xl bg-sand-gold/15 flex items-center justify-center mb-6">
           <span class="material-symbols-outlined text-3xl text-sand-gold" aria-hidden="true">account_balance</span>
         </div>
@@ -244,14 +96,14 @@
             لوحات البيانات
           </li>
         </ul>
-        <a href="contact.html" class="inline-flex items-center gap-2 text-sand-gold text-sm font-bold hover:gap-3 transition-all">
+        <a href="contact.php" class="inline-flex items-center gap-2 text-sand-gold text-sm font-bold hover:gap-3 transition-all">
           اكتشف المزيد
           <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_back</span>
         </a>
       </div>
 
       <!-- Card 3: التجارة الإلكترونية -->
-      <div class="bg-surface-container rounded-[2rem] p-8 border border-white/5 hover:border-primary-container/20 transition-all group">
+      <div class="bg-surface-container rounded-[2rem] p-8 border border-white/5 hover:border-primary-container/20 transition-all group reveal card-hover">
         <div class="w-16 h-16 rounded-2xl bg-primary-container/15 flex items-center justify-center mb-6">
           <span class="material-symbols-outlined text-3xl text-primary-container" aria-hidden="true">shopping_cart</span>
         </div>
@@ -277,14 +129,14 @@
             تكامل شركات الشحن
           </li>
         </ul>
-        <a href="contact.html" class="inline-flex items-center gap-2 text-primary-container text-sm font-bold hover:gap-3 transition-all">
+        <a href="contact.php" class="inline-flex items-center gap-2 text-primary-container text-sm font-bold hover:gap-3 transition-all">
           اكتشف المزيد
           <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_back</span>
         </a>
       </div>
 
       <!-- Card 4: العيادات والمراكز الطبية -->
-      <div class="bg-surface-container rounded-[2rem] p-8 border border-white/5 hover:border-primary-container/20 transition-all group">
+      <div class="bg-surface-container rounded-[2rem] p-8 border border-white/5 hover:border-primary-container/20 transition-all group reveal card-hover">
         <div class="w-16 h-16 rounded-2xl bg-sand-gold/15 flex items-center justify-center mb-6">
           <span class="material-symbols-outlined text-3xl text-sand-gold" aria-hidden="true">local_hospital</span>
         </div>
@@ -310,14 +162,14 @@
             التقارير الصحية
           </li>
         </ul>
-        <a href="contact.html" class="inline-flex items-center gap-2 text-sand-gold text-sm font-bold hover:gap-3 transition-all">
+        <a href="contact.php" class="inline-flex items-center gap-2 text-sand-gold text-sm font-bold hover:gap-3 transition-all">
           اكتشف المزيد
           <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_back</span>
         </a>
       </div>
 
       <!-- Card 5: التعليم -->
-      <div class="bg-surface-container rounded-[2rem] p-8 border border-white/5 hover:border-primary-container/20 transition-all group">
+      <div class="bg-surface-container rounded-[2rem] p-8 border border-white/5 hover:border-primary-container/20 transition-all group reveal card-hover">
         <div class="w-16 h-16 rounded-2xl bg-primary-container/15 flex items-center justify-center mb-6">
           <span class="material-symbols-outlined text-3xl text-primary-container" aria-hidden="true">school</span>
         </div>
@@ -343,14 +195,14 @@
             التقييم الرقمي
           </li>
         </ul>
-        <a href="contact.html" class="inline-flex items-center gap-2 text-primary-container text-sm font-bold hover:gap-3 transition-all">
+        <a href="contact.php" class="inline-flex items-center gap-2 text-primary-container text-sm font-bold hover:gap-3 transition-all">
           اكتشف المزيد
           <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_back</span>
         </a>
       </div>
 
       <!-- Card 6: العقارات -->
-      <div class="bg-surface-container rounded-[2rem] p-8 border border-white/5 hover:border-primary-container/20 transition-all group">
+      <div class="bg-surface-container rounded-[2rem] p-8 border border-white/5 hover:border-primary-container/20 transition-all group reveal card-hover">
         <div class="w-16 h-16 rounded-2xl bg-sand-gold/15 flex items-center justify-center mb-6">
           <span class="material-symbols-outlined text-3xl text-sand-gold" aria-hidden="true">apartment</span>
         </div>
@@ -376,14 +228,14 @@
             التسويق الرقمي
           </li>
         </ul>
-        <a href="contact.html" class="inline-flex items-center gap-2 text-sand-gold text-sm font-bold hover:gap-3 transition-all">
+        <a href="contact.php" class="inline-flex items-center gap-2 text-sand-gold text-sm font-bold hover:gap-3 transition-all">
           اكتشف المزيد
           <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_back</span>
         </a>
       </div>
 
       <!-- Card 7: المطاعم والكافيهات -->
-      <div class="bg-surface-container rounded-[2rem] p-8 border border-white/5 hover:border-primary-container/20 transition-all group">
+      <div class="bg-surface-container rounded-[2rem] p-8 border border-white/5 hover:border-primary-container/20 transition-all group reveal card-hover">
         <div class="w-16 h-16 rounded-2xl bg-primary-container/15 flex items-center justify-center mb-6">
           <span class="material-symbols-outlined text-3xl text-primary-container" aria-hidden="true">restaurant</span>
         </div>
@@ -409,14 +261,14 @@
             برامج الولاء
           </li>
         </ul>
-        <a href="contact.html" class="inline-flex items-center gap-2 text-primary-container text-sm font-bold hover:gap-3 transition-all">
+        <a href="contact.php" class="inline-flex items-center gap-2 text-primary-container text-sm font-bold hover:gap-3 transition-all">
           اكتشف المزيد
           <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_back</span>
         </a>
       </div>
 
       <!-- Card 8: الخدمات اللوجستية -->
-      <div class="bg-surface-container rounded-[2rem] p-8 border border-white/5 hover:border-primary-container/20 transition-all group">
+      <div class="bg-surface-container rounded-[2rem] p-8 border border-white/5 hover:border-primary-container/20 transition-all group reveal card-hover">
         <div class="w-16 h-16 rounded-2xl bg-sand-gold/15 flex items-center justify-center mb-6">
           <span class="material-symbols-outlined text-3xl text-sand-gold" aria-hidden="true">local_shipping</span>
         </div>
@@ -442,14 +294,14 @@
             التقارير التشغيلية
           </li>
         </ul>
-        <a href="contact.html" class="inline-flex items-center gap-2 text-sand-gold text-sm font-bold hover:gap-3 transition-all">
+        <a href="contact.php" class="inline-flex items-center gap-2 text-sand-gold text-sm font-bold hover:gap-3 transition-all">
           اكتشف المزيد
           <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_back</span>
         </a>
       </div>
 
       <!-- Card 9: الاستشارات -->
-      <div class="bg-surface-container rounded-[2rem] p-8 border border-white/5 hover:border-primary-container/20 transition-all group">
+      <div class="bg-surface-container rounded-[2rem] p-8 border border-white/5 hover:border-primary-container/20 transition-all group reveal card-hover">
         <div class="w-16 h-16 rounded-2xl bg-primary-container/15 flex items-center justify-center mb-6">
           <span class="material-symbols-outlined text-3xl text-primary-container" aria-hidden="true">support_agent</span>
         </div>
@@ -475,7 +327,7 @@
             أنظمة الفوترة
           </li>
         </ul>
-        <a href="contact.html" class="inline-flex items-center gap-2 text-primary-container text-sm font-bold hover:gap-3 transition-all">
+        <a href="contact.php" class="inline-flex items-center gap-2 text-primary-container text-sm font-bold hover:gap-3 transition-all">
           اكتشف المزيد
           <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_back</span>
         </a>
@@ -485,11 +337,11 @@
   </section>
 
   <!-- 3. Value Proposition Section -->
-  <section class="py-32 bg-surface-container-low/50">
-    <div class="max-w-screen-2xl mx-auto px-6">
+  <section class="py-32 bg-surface-container-low/50 section-glow">
+    <div class="max-w-screen-2xl mx-auto px-4 md:px-6">
       <!-- Heading -->
       <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-5xl font-black text-white">لماذا حلول ركال لقطاعك؟</h2>
+        <h2 class="text-2xl sm:text-3xl md:text-5xl font-black text-white">لماذا حلول ركال لقطاعك؟</h2>
       </div>
 
       <!-- 3 glass-panel cards -->
@@ -533,20 +385,20 @@
   </section>
 
   <!-- 4. CTA Block -->
-  <section class="py-32 px-6">
+  <section class="py-32 px-4 md:px-6 section-glow">
     <div class="max-w-4xl mx-auto">
-      <div class="relative overflow-hidden rounded-[2.5rem] circuit-bg p-12 md:p-16 text-center border border-primary-container/20">
+      <div class="relative overflow-hidden rounded-[2.5rem] circuit-bg p-6 md:p-12 lg:p-16 text-center border border-primary-container/20">
         <!-- Glow overlay -->
         <div class="absolute inset-0 bg-gradient-to-br from-primary-container/10 via-transparent to-sand-gold/5 pointer-events-none"></div>
-        <div class="absolute top-0 right-0 w-72 h-72 bg-primary-container/10 rounded-full blur-[100px] pointer-events-none"></div>
-        <div class="absolute bottom-0 left-0 w-64 h-64 bg-sand-gold/8 rounded-full blur-[80px] pointer-events-none"></div>
+        <div class="absolute top-0 right-0 w-36 h-36 md:w-72 md:h-72 bg-primary-container/10 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-32 h-32 md:w-64 md:h-64 bg-sand-gold/8 rounded-full blur-[80px] pointer-events-none"></div>
 
         <div class="relative z-10">
           <div class="w-16 h-16 rounded-2xl bg-primary-container/15 flex items-center justify-center mx-auto mb-8">
             <span class="material-symbols-outlined text-3xl text-primary-container" aria-hidden="true">contact_support</span>
           </div>
 
-          <h2 class="text-3xl md:text-4xl font-black text-white mb-6 leading-tight">
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-6 leading-tight">
             لم تجد قطاعك؟ تواصل معنا
             <span class="block mt-1 text-primary-container">لحل مخصص</span>
           </h2>
@@ -556,11 +408,11 @@
           </p>
 
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="contact.html" class="tech-gradient text-on-primary-fixed px-8 py-4 rounded-xl font-bold text-lg hover:shadow-[0_0_25px_rgba(0,242,255,0.35)] transition-all duration-300 inline-flex items-center justify-center gap-2">
+            <a href="contact.php" class="tech-gradient text-on-primary-fixed px-8 py-4 rounded-xl font-bold text-lg hover:shadow-[0_0_25px_rgba(0,242,255,0.35)] transition-all duration-300 inline-flex items-center justify-center gap-2">
               <span class="material-symbols-outlined text-xl" aria-hidden="true">chat</span>
               تواصل مع فريقنا
             </a>
-            <a href="contact.html" class="bg-white/5 border border-white/10 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 hover:border-white/20 transition-all duration-300 inline-flex items-center justify-center gap-2">
+            <a href="contact.php" class="bg-white/5 border border-white/10 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 hover:border-white/20 transition-all duration-300 inline-flex items-center justify-center gap-2">
               <span class="material-symbols-outlined text-xl" aria-hidden="true">description</span>
               اطلب عرض سعر
             </a>
@@ -570,62 +422,4 @@
     </div>
   </section>
 
-</main>
-
-<!-- Footer -->
-<footer class="w-full rounded-t-[3rem] bg-[#0b1229] border-t border-white/5 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
-  <div class="sadu-pattern">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 text-right max-w-screen-2xl mx-auto">
-      <div class="space-y-6">
-        <div class="text-4xl font-black text-white">رکال</div>
-        <p class="text-sm leading-relaxed text-white/50">شركة سعودية رائدة متخصصة في حلول التحول الرقمي والهندسة البرمجية المتقدمة. ملتزمون بتمكين رؤية المملكة ٢٠٣٠ من خلال التميز التقني.</p>
-        <div class="flex gap-4 justify-end">
-          <a href="#" class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-white/60 hover:bg-primary-container hover:text-on-primary-container transition-all" aria-label="الموقع"><span class="material-symbols-outlined" aria-hidden="true">public</span></a>
-          <a href="#" class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-white/60 hover:bg-primary-container hover:text-on-primary-container transition-all" aria-label="البريد"><span class="material-symbols-outlined" aria-hidden="true">alternate_email</span></a>
-          <a href="#" class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-white/60 hover:bg-primary-container hover:text-on-primary-container transition-all" aria-label="الهاتف"><span class="material-symbols-outlined" aria-hidden="true">call</span></a>
-        </div>
-      </div>
-      <div>
-        <h4 class="text-white font-bold mb-8 text-xl">روابط سريعة</h4>
-        <ul class="space-y-5 text-sm">
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="index.html">الرئيسية</a></li>
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="about.html">من نحن</a></li>
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="services.html">خدماتنا</a></li>
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="solutions.html">الحلول</a></li>
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="contact.html">تواصل معنا</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="text-white font-bold mb-8 text-xl">خدماتنا</h4>
-        <ul class="space-y-5 text-sm">
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="services.html">تطوير المواقع</a></li>
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="services.html">تطبيقات الجوال</a></li>
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="services.html">أنظمة ERP</a></li>
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="services.html">المتاجر الإلكترونية</a></li>
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="services.html">الذكاء الاصطناعي</a></li>
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="services.html">التسويق الرقمي</a></li>
-        </ul>
-      </div>
-      <div class="space-y-6">
-        <h4 class="text-white font-bold text-xl">النشرة التقنية</h4>
-        <p class="text-sm text-white/60 leading-relaxed">ابقَ على اطلاع بأحدث تقنيات التحول الرقمي في المملكة.</p>
-        <form class="flex flex-col gap-4" onsubmit="return false;">
-          <input class="bg-surface-container-highest border border-white/5 rounded-2xl px-5 py-4 text-white placeholder:text-white/20 focus:ring-2 focus:ring-primary-container outline-none transition-all" placeholder="البريد الإلكتروني المؤسسي" type="email"/>
-          <button type="button" class="bg-primary-container text-on-primary-container py-4 rounded-2xl font-bold hover:shadow-[0_0_25px_rgba(0,242,255,0.25)] transition-all">اشترك الآن</button>
-        </form>
-      </div>
-    </div>
-    <div class="border-t border-white/5 py-10 px-12 max-w-screen-2xl mx-auto flex flex-col md:flex-row-reverse justify-between items-center gap-6 text-xs text-white/30 uppercase tracking-widest font-bold">
-      <p>جميع الحقوق محفوظة لشركة ركال ٢٠٢٤ © المملكة العربية السعودية</p>
-      <div class="flex gap-8">
-        <a class="hover:text-[#00f2ff] transition-colors" href="#">الخصوصية</a>
-        <a class="hover:text-[#00f2ff] transition-colors" href="#">الشروط</a>
-        <a class="hover:text-[#00f2ff] transition-colors" href="#">الكوكيز</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script src="js/main.js"></script>
-</body>
-</html>
+<?php require_once 'includes/footer.php'; ?>
