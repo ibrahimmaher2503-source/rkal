@@ -1,0 +1,112 @@
+/* ===== Rakal Design System — Shared Styles ===== */
+
+/* --- Base --- */
+body {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
+
+/* --- Design Tokens (CSS classes) --- */
+.glass-panel {
+  background: rgba(24, 30, 54, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 242, 255, 0.1);
+}
+
+.circuit-bg {
+  background-image: radial-gradient(circle at 2px 2px, rgba(0, 242, 255, 0.05) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+.sadu-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 30-30 30L0 30z' fill='%23D4AF37' fill-opacity='0.03'/%3E%3C/svg%3E");
+  background-size: 40px 40px;
+}
+
+.tech-gradient {
+  background: linear-gradient(135deg, #00f2ff 0%, #4cd6ff 100%);
+}
+
+.gold-accent {
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+}
+
+.glow-shadow {
+  box-shadow: 0 0 30px rgba(0, 242, 255, 0.3);
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 242, 255, 0.2), transparent);
+}
+
+/* --- Navbar scroll state --- */
+#navbar {
+  transition: background-color 300ms ease, box-shadow 300ms ease;
+}
+#navbar.scrolled {
+  background-color: rgba(11, 18, 41, 0.95) !important;
+  box-shadow: 0 20px 40px rgba(0, 242, 255, 0.08);
+}
+
+/* --- Mobile Drawer --- */
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 55;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease;
+}
+.drawer-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.drawer-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 80%;
+  max-width: 320px;
+  z-index: 60;
+  transform: translateX(100%);
+  transition: transform 300ms ease;
+  overflow-y: auto;
+}
+.drawer-panel.active {
+  transform: translateX(0);
+}
+
+/* --- FAQ Accordion --- */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 300ms ease;
+}
+.faq-item.active .faq-answer {
+  max-height: 500px;
+}
+.faq-icon {
+  transition: transform 300ms ease;
+}
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+/* --- Animations --- */
+@keyframes slow-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-slow-bounce {
+  animation: slow-bounce 4s ease-in-out infinite;
+}
