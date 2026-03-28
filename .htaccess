@@ -34,6 +34,43 @@ ErrorDocument 404 /404.php
     RewriteRule ^includes/ - [F,L]
 </IfModule>
 
+# ── Clean URL Routing ────────────────────────────────────────────────────────
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Skip admin panel — keep direct file access
+    RewriteRule ^admin/ - [L]
+
+    # Skip existing files and directories (CSS, JS, images, uploads, etc.)
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # / → index.php
+    RewriteRule ^$ index.php [L]
+
+    # /about → about.php
+    RewriteRule ^about/?$ about.php [L]
+
+    # /services → services.php
+    RewriteRule ^services/?$ services.php [L]
+
+    # /services/{slug} → service-detail.php?slug={slug}
+    RewriteRule ^services/([a-zA-Z0-9_-]+)/?$ service-detail.php?slug=$1 [L,QSA]
+
+    # /blog → blog.php
+    RewriteRule ^blog/?$ blog.php [L,QSA]
+
+    # /blog/{slug} → blog-detail.php?slug={slug}
+    RewriteRule ^blog/([a-zA-Z0-9_-]+)/?$ blog-detail.php?slug=$1 [L,QSA]
+
+    # /solutions → solutions.php
+    RewriteRule ^solutions/?$ solutions.php [L]
+
+    # /contact → contact.php
+    RewriteRule ^contact/?$ contact.php [L]
+</IfModule>
+
 # ── Disable directory browsing ────────────────────────────────────────────────
 Options -Indexes
 

@@ -22,7 +22,7 @@ require_once 'includes/header.php';
         نطوّر المواقع، الأنظمة، التطبيقات، وحلول الذكاء الاصطناعي بأيدي وطنية وخبرات عالمية تضمن لشركتك التميز في قلب العاصمة الرياض.
       </p>
       <div class="flex flex-wrap gap-4 pt-4 reveal reveal-delay-4">
-        <a href="contact.php" class="cta-btn tech-gradient text-on-primary-fixed px-8 py-4 rounded-xl font-bold text-lg flex items-center gap-2 shadow-[0_10px_30px_rgba(0,242,255,0.2)]">
+        <a href="/contact" class="cta-btn tech-gradient text-on-primary-fixed px-8 py-4 rounded-xl font-bold text-lg flex items-center gap-2 shadow-[0_10px_30px_rgba(0,242,255,0.2)]">
           ابدأ مشروعك
           <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
         </a>
@@ -102,7 +102,7 @@ require_once 'includes/header.php';
           <span class="material-symbols-outlined text-5xl text-primary-container mb-6 block" aria-hidden="true">web</span>
           <h3 class="text-2xl font-bold text-white mb-4">برمجة المواقع والمنصات الحكومية</h3>
           <p class="text-on-surface-variant mb-8 leading-relaxed">بناء منصات إلكترونية متقدمة متوافقة مع متطلبات هيئة الحكومة الرقمية وتجربة مستخدم متميزة.</p>
-          <a href="services.php" class="text-primary-container flex items-center gap-2 group-hover:gap-4 transition-all font-bold">
+          <a href="/services" class="text-primary-container flex items-center gap-2 group-hover:gap-4 transition-all font-bold">
             استكشف المزيد
             <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
           </a>
@@ -131,7 +131,7 @@ require_once 'includes/header.php';
           <span class="material-symbols-outlined text-5xl text-primary-container mb-6 block" aria-hidden="true">settings_suggest</span>
           <h3 class="text-2xl font-bold text-white mb-4">أنظمة إدارة الموارد (ERP)</h3>
           <p class="text-on-surface-variant mb-8 leading-relaxed">أنظمة مخصصة تتماشى مع القوانين والأنظمة المالية السعودية بدقة متناهية.</p>
-          <a href="services.php" class="text-primary-container flex items-center gap-2 group-hover:gap-4 transition-all font-bold">
+          <a href="/services" class="text-primary-container flex items-center gap-2 group-hover:gap-4 transition-all font-bold">
             استكشف المزيد
             <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
           </a>
@@ -610,8 +610,8 @@ require_once 'includes/header.php';
         <h2 class="text-2xl sm:text-4xl md:text-5xl font-headline font-bold mb-8 leading-tight text-white">جاهز لبناء حل رقمي احترافي يخدم أعمالك في المملكة؟</h2>
         <p class="text-on-surface-variant text-lg mb-12">فريقنا التقني مستعد لتحويل تحدياتك إلى فرص نمو حقيقية. ابدأ اليوم.</p>
         <div class="flex flex-col md:flex-row justify-center gap-6">
-          <a href="contact.php" class="tech-gradient text-on-primary-fixed px-12 py-5 rounded-2xl font-bold text-lg hover:shadow-[0_0_50px_rgba(0,242,255,0.4)] transition-all active:scale-95">تحدث معنا الآن</a>
-          <a href="contact.php" class="bg-white/5 border border-white/10 text-white px-12 py-5 rounded-2xl font-bold text-lg hover:bg-white/10 transition-all">اطلب عرض سعر</a>
+          <a href="/contact" class="tech-gradient text-on-primary-fixed px-12 py-5 rounded-2xl font-bold text-lg hover:shadow-[0_0_50px_rgba(0,242,255,0.4)] transition-all active:scale-95">تحدث معنا الآن</a>
+          <a href="/contact" class="bg-white/5 border border-white/10 text-white px-12 py-5 rounded-2xl font-bold text-lg hover:bg-white/10 transition-all">اطلب عرض سعر</a>
         </div>
       </div>
     </div>

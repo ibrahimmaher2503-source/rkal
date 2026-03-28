@@ -63,7 +63,7 @@ require_once 'includes/header.php';
             لوحات التحليلات
           </li>
         </ul>
-        <a href="contact.php" class="inline-flex items-center gap-2 text-primary-container text-sm font-bold hover:gap-3 transition-all">
+        <a href="/contact" class="inline-flex items-center gap-2 text-primary-container text-sm font-bold hover:gap-3 transition-all">
           اكتشف المزيد
           <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_back</span>
         </a>
@@ -96,7 +96,7 @@ require_once 'includes/header.php';
             لوحات البيانات
           </li>
         </ul>
-        <a href="contact.php" class="inline-flex items-center gap-2 text-sand-gold text-sm font-bold hover:gap-3 transition-all">
+        <a href="/contact" class="inline-flex items-center gap-2 text-sand-gold text-sm font-bold hover:gap-3 transition-all">
           اكتشف المزيد
           <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_back</span>
         </a>
@@ -129,7 +129,7 @@ require_once 'includes/header.php';
             تكامل شركات الشحن
           </li>
         </ul>
-        <a href="contact.php" class="inline-flex items-center gap-2 text-primary-container text-sm font-bold hover:gap-3 transition-all">
+        <a href="/contact" class="inline-flex items-center gap-2 text-primary-container text-sm font-bold hover:gap-3 transition-all">
           اكتشف المزيد
           <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_back</span>
         </a>
@@ -162,7 +162,7 @@ require_once 'includes/header.php';
             التقارير الصحية
           </li>
         </ul>
-        <a href="contact.php" class="inline-flex items-center gap-2 text-sand-gold text-sm font-bold hover:gap-3 transition-all">
+        <a href="/contact" class="inline-flex items-center gap-2 text-sand-gold text-sm font-bold hover:gap-3 transition-all">
           اكتشف المزيد
           <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_back</span>
         </a>
@@ -195,7 +195,7 @@ require_once 'includes/header.php';
             التقييم الرقمي
           </li>
         </ul>
-        <a href="contact.php" class="inline-flex items-center gap-2 text-primary-container text-sm font-bold hover:gap-3 transition-all">
+        <a href="/contact" class="inline-flex items-center gap-2 text-primary-container text-sm font-bold hover:gap-3 transition-all">
           اكتشف المزيد
           <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_back</span>
         </a>
@@ -228,7 +228,7 @@ require_once 'includes/header.php';
             التسويق الرقمي
           </li>
         </ul>
-        <a href="contact.php" class="inline-flex items-center gap-2 text-sand-gold text-sm font-bold hover:gap-3 transition-all">
+        <a href="/contact" class="inline-flex items-center gap-2 text-sand-gold text-sm font-bold hover:gap-3 transition-all">
           اكتشف المزيد
           <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_back</span>
         </a>
@@ -261,7 +261,7 @@ require_once 'includes/header.php';
             برامج الولاء
           </li>
         </ul>
-        <a href="contact.php" class="inline-flex items-center gap-2 text-primary-container text-sm font-bold hover:gap-3 transition-all">
+        <a href="/contact" class="inline-flex items-center gap-2 text-primary-container text-sm font-bold hover:gap-3 transition-all">
           اكتشف المزيد
           <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_back</span>
         </a>
@@ -294,7 +294,7 @@ require_once 'includes/header.php';
             التقارير التشغيلية
           </li>
         </ul>
-        <a href="contact.php" class="inline-flex items-center gap-2 text-sand-gold text-sm font-bold hover:gap-3 transition-all">
+        <a href="/contact" class="inline-flex items-center gap-2 text-sand-gold text-sm font-bold hover:gap-3 transition-all">
           اكتشف المزيد
           <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_back</span>
         </a>
@@ -327,7 +327,7 @@ require_once 'includes/header.php';
             أنظمة الفوترة
           </li>
         </ul>
-        <a href="contact.php" class="inline-flex items-center gap-2 text-primary-container text-sm font-bold hover:gap-3 transition-all">
+        <a href="/contact" class="inline-flex items-center gap-2 text-primary-container text-sm font-bold hover:gap-3 transition-all">
           اكتشف المزيد
           <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_back</span>
         </a>
@@ -408,11 +408,11 @@ require_once 'includes/header.php';
           </p>
 
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="contact.php" class="tech-gradient text-on-primary-fixed px-8 py-4 rounded-xl font-bold text-lg hover:shadow-[0_0_25px_rgba(0,242,255,0.35)] transition-all duration-300 inline-flex items-center justify-center gap-2">
+            <a href="/contact" class="tech-gradient text-on-primary-fixed px-8 py-4 rounded-xl font-bold text-lg hover:shadow-[0_0_25px_rgba(0,242,255,0.35)] transition-all duration-300 inline-flex items-center justify-center gap-2">
               <span class="material-symbols-outlined text-xl" aria-hidden="true">chat</span>
               تواصل مع فريقنا
             </a>
-            <a href="contact.php" class="bg-white/5 border border-white/10 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 hover:border-white/20 transition-all duration-300 inline-flex items-center justify-center gap-2">
+            <a href="/contact" class="bg-white/5 border border-white/10 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 hover:border-white/20 transition-all duration-300 inline-flex items-center justify-center gap-2">
               <span class="material-symbols-outlined text-xl" aria-hidden="true">description</span>
               اطلب عرض سعر
             </a>

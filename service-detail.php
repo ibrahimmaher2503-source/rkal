@@ -253,9 +253,9 @@ $accentHex2 = $isGold ? '#e8c84a' : '#4cd6ff';
   <div class="relative z-10 max-w-screen-xl mx-auto w-full">
     <!-- Breadcrumb -->
     <nav class="flex items-center gap-2 text-sm text-on-surface-variant mb-10 reveal" aria-label="مسار التنقل">
-      <a href="index.php" class="hover:text-white transition-colors" style="color: <?= $accentHex ?>;">الرئيسية</a>
+      <a href="/" class="hover:text-white transition-colors" style="color: <?= $accentHex ?>;">الرئيسية</a>
       <span class="material-symbols-outlined text-base" aria-hidden="true">chevron_left</span>
-      <a href="services.php" class="hover:text-white transition-colors" style="color: <?= $accentHex ?>;">خدماتنا</a>
+      <a href="/services" class="hover:text-white transition-colors" style="color: <?= $accentHex ?>;">خدماتنا</a>
       <span class="material-symbols-outlined text-base" aria-hidden="true">chevron_left</span>
       <span class="text-white/80"><?= e($service['title']) ?></span>
     </nav>
@@ -290,7 +290,7 @@ $accentHex2 = $isGold ? '#e8c84a' : '#4cd6ff';
 
     <!-- Quick actions -->
     <div class="reveal reveal-delay-4 flex flex-wrap gap-4">
-      <a href="contact.php" class="inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-bold text-base transition-all active:scale-[0.97]"
+      <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-bold text-base transition-all active:scale-[0.97]"
          style="background: linear-gradient(135deg, <?= $accentHex ?>, <?= $accentHex2 ?>); color: #0b1229; box-shadow: 0 0 30px <?= $accentHex ?>30;"
          onmouseover="this.style.boxShadow='0 0 50px <?= $accentHex ?>50'"
          onmouseout="this.style.boxShadow='0 0 30px <?= $accentHex ?>30'">
@@ -619,7 +619,7 @@ $accentHex2 = $isGold ? '#e8c84a' : '#4cd6ff';
         $relAccent = $relIsGold ? '#D4AF37' : '#00f2ff';
         $relAccent2 = $relIsGold ? '#e8c84a' : '#4cd6ff';
       ?>
-      <a href="service-detail.php?slug=<?= e($rel['slug']) ?>"
+      <a href="/services/<?= e($rel['slug']) ?>"
          class="reveal group glass-panel card-hover rounded-[2rem] p-8 border border-white/5 transition-all duration-500 relative overflow-hidden"
          style="transition-delay: <?= ($ri * 100) ?>ms; --accent-color: <?= $relAccent ?>;">
 
@@ -678,14 +678,14 @@ $accentHex2 = $isGold ? '#e8c84a' : '#4cd6ff';
           فريقنا التقني مستعد لتحويل احتياجاتك إلى حلول رقمية متكاملة. تواصل معنا الآن لنبدأ رحلتك نحو التحول الرقمي.
         </p>
         <div class="reveal flex flex-col sm:flex-row justify-center gap-5">
-          <a href="contact.php" class="inline-flex items-center justify-center gap-2 px-10 py-4.5 rounded-2xl font-bold text-lg transition-all active:scale-[0.97]"
+          <a href="/contact" class="inline-flex items-center justify-center gap-2 px-10 py-4.5 rounded-2xl font-bold text-lg transition-all active:scale-[0.97]"
              style="background: linear-gradient(135deg, <?= $accentHex ?>, <?= $accentHex2 ?>); color: #0b1229; box-shadow: 0 0 40px <?= $accentHex ?>30;"
              onmouseover="this.style.boxShadow='0 0 60px <?= $accentHex ?>50'"
              onmouseout="this.style.boxShadow='0 0 40px <?= $accentHex ?>30'">
             <span class="material-symbols-outlined" aria-hidden="true">chat</span>
             تواصل معنا
           </a>
-          <a href="contact.php" class="inline-flex items-center justify-center gap-2 bg-white/5 border border-white/10 text-white px-10 py-4.5 rounded-2xl font-bold text-lg hover:bg-white/10 hover:border-white/20 transition-all">
+          <a href="/contact" class="inline-flex items-center justify-center gap-2 bg-white/5 border border-white/10 text-white px-10 py-4.5 rounded-2xl font-bold text-lg hover:bg-white/10 hover:border-white/20 transition-all">
             <span class="material-symbols-outlined" aria-hidden="true">description</span>
             اطلب عرض سعر
           </a>

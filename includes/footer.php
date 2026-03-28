@@ -15,22 +15,22 @@
       <div>
         <h4 class="text-white font-bold mb-8 text-xl">روابط سريعة</h4>
         <ul class="space-y-5 text-sm">
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="index.php">الرئيسية</a></li>
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="about.php">من نحن</a></li>
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="services.php">خدماتنا</a></li>
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="solutions.php">الحلول</a></li>
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="contact.php">تواصل معنا</a></li>
+          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="/">الرئيسية</a></li>
+          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="/about">من نحن</a></li>
+          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="/services">خدماتنا</a></li>
+          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="/solutions">الحلول</a></li>
+          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="/contact">تواصل معنا</a></li>
         </ul>
       </div>
       <div>
         <h4 class="text-white font-bold mb-8 text-xl">خدماتنا</h4>
         <ul class="space-y-5 text-sm">
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="services.php">تطوير المواقع</a></li>
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="services.php">تطبيقات الجوال</a></li>
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="services.php">أنظمة ERP</a></li>
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="services.php">المتاجر الإلكترونية</a></li>
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="services.php">الذكاء الاصطناعي</a></li>
-          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="services.php">التسويق الرقمي</a></li>
+          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="/services">تطوير المواقع</a></li>
+          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="/services">تطبيقات الجوال</a></li>
+          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="/services">أنظمة ERP</a></li>
+          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="/services">المتاجر الإلكترونية</a></li>
+          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="/services">الذكاء الاصطناعي</a></li>
+          <li><a class="text-white/60 hover:text-[#00f2ff] hover:mr-2 inline-block transition-all duration-300" href="/services">التسويق الرقمي</a></li>
         </ul>
       </div>
       <div class="space-y-6">

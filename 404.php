@@ -65,7 +65,7 @@ if (isset($_SERVER['REQUEST_URI'])) {
 
       <!-- CTA Buttons -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-        <a href="index.php"
+        <a href="/"
            class="inline-flex items-center gap-2 tech-gradient text-on-primary-fixed px-8 py-3.5 rounded-xl font-bold text-sm transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,242,255,0.3)] hover:scale-[1.02]">
           <span class="material-symbols-outlined text-lg">home</span>
           العودة للرئيسية
@@ -83,27 +83,27 @@ if (isset($_SERVER['REQUEST_URI'])) {
       <!-- Quick navigation cards -->
       <div class="text-sm text-on-surface-variant/60 font-bold uppercase tracking-widest mb-6">أو انتقل إلى</div>
       <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-lg mx-auto">
-        <a href="services.php" class="error-nav-card glass-panel rounded-2xl p-4 text-center border border-white/5">
+        <a href="/services" class="error-nav-card glass-panel rounded-2xl p-4 text-center border border-white/5">
           <span class="error-nav-icon material-symbols-outlined text-2xl text-white/40 mb-2 block" style="font-variation-settings: 'FILL' 1;">code</span>
           <span class="text-sm text-white/70 font-medium">خدماتنا</span>
         </a>
-        <a href="solutions.php" class="error-nav-card glass-panel rounded-2xl p-4 text-center border border-white/5">
+        <a href="/solutions" class="error-nav-card glass-panel rounded-2xl p-4 text-center border border-white/5">
           <span class="error-nav-icon material-symbols-outlined text-2xl text-white/40 mb-2 block" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
           <span class="text-sm text-white/70 font-medium">الحلول</span>
         </a>
-        <a href="blog.php" class="error-nav-card glass-panel rounded-2xl p-4 text-center border border-white/5">
+        <a href="/blog" class="error-nav-card glass-panel rounded-2xl p-4 text-center border border-white/5">
           <span class="error-nav-icon material-symbols-outlined text-2xl text-white/40 mb-2 block" style="font-variation-settings: 'FILL' 1;">article</span>
           <span class="text-sm text-white/70 font-medium">المدونة</span>
         </a>
-        <a href="about.php" class="error-nav-card glass-panel rounded-2xl p-4 text-center border border-white/5">
+        <a href="/about" class="error-nav-card glass-panel rounded-2xl p-4 text-center border border-white/5">
           <span class="error-nav-icon material-symbols-outlined text-2xl text-white/40 mb-2 block" style="font-variation-settings: 'FILL' 1;">groups</span>
           <span class="text-sm text-white/70 font-medium">من نحن</span>
         </a>
-        <a href="contact.php" class="error-nav-card glass-panel rounded-2xl p-4 text-center border border-white/5">
+        <a href="/contact" class="error-nav-card glass-panel rounded-2xl p-4 text-center border border-white/5">
           <span class="error-nav-icon material-symbols-outlined text-2xl text-white/40 mb-2 block" style="font-variation-settings: 'FILL' 1;">mail</span>
           <span class="text-sm text-white/70 font-medium">تواصل معنا</span>
         </a>
-        <a href="index.php" class="error-nav-card glass-panel rounded-2xl p-4 text-center border border-white/5">
+        <a href="/" class="error-nav-card glass-panel rounded-2xl p-4 text-center border border-white/5">
           <span class="error-nav-icon material-symbols-outlined text-2xl text-white/40 mb-2 block" style="font-variation-settings: 'FILL' 1;">home</span>
           <span class="text-sm text-white/70 font-medium">الرئيسية</span>
         </a>

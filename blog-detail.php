@@ -79,9 +79,9 @@ $colorHex  = ($color === 'sand-gold') ? '#D4AF37' : '#00f2ff';
 
       <!-- Breadcrumb -->
       <nav class="flex items-center gap-2 text-sm text-on-surface-variant mb-10 reveal" aria-label="مسار التنقل">
-        <a href="index.php" class="text-primary-container hover:text-white transition-colors">الرئيسية</a>
+        <a href="/" class="text-primary-container hover:text-white transition-colors">الرئيسية</a>
         <span class="material-symbols-outlined text-base" aria-hidden="true">chevron_left</span>
-        <a href="blog.php" class="text-primary-container hover:text-white transition-colors">المدونة</a>
+        <a href="/blog" class="text-primary-container hover:text-white transition-colors">المدونة</a>
         <span class="material-symbols-outlined text-base" aria-hidden="true">chevron_left</span>
         <span class="truncate max-w-[200px] md:max-w-xs"><?= e($post['title']) ?></span>
       </nav>
@@ -182,7 +182,7 @@ $colorHex  = ($color === 'sand-gold') ? '#D4AF37' : '#00f2ff';
           $relHex   = ($relColor === 'sand-gold') ? '#D4AF37' : '#00f2ff';
           $relIcon  = categoryIcon($rel['category']);
         ?>
-        <a href="blog-detail.php?slug=<?= e($rel['slug']) ?>"
+        <a href="/blog/<?= e($rel['slug']) ?>"
            class="reveal blog-card group glass-panel card-hover rounded-[2rem] overflow-hidden border border-white/5 hover:border-<?= $relColor ?>/20 transition-all duration-500"
            style="transition-delay: <?= ($ri * 80) ?>ms;">
 
@@ -242,7 +242,7 @@ $colorHex  = ($color === 'sand-gold') ? '#D4AF37' : '#00f2ff';
   <!-- ===== Back Link + Navigation ===== -->
   <section class="pb-24 px-4 md:px-8">
     <div class="max-w-4xl mx-auto flex items-center justify-between">
-      <a href="blog.php" class="inline-flex items-center gap-2 text-sm font-bold transition-all hover:gap-3 group" style="color: <?= $colorHex ?>;">
+      <a href="/blog" class="inline-flex items-center gap-2 text-sm font-bold transition-all hover:gap-3 group" style="color: <?= $colorHex ?>;">
         <span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform" aria-hidden="true">arrow_forward</span>
         العودة إلى المدونة
       </a>
