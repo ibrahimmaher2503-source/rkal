@@ -27,11 +27,11 @@
 **Files:**
 - Create: `css/styles.css`
 
-- [ ] **Step 1: Create `css/` directory**
+- [x] **Step 1: Create `css/` directory**
 
 Run: `mkdir -p css`
 
-- [ ] **Step 2: Write `css/styles.css`**
+- [x] **Step 2: Write `css/styles.css`**
 
 ```css
 /* ===== Rakal Design System — Shared Styles ===== */
@@ -148,12 +148,12 @@ body {
 }
 ```
 
-- [ ] **Step 3: Verify file exists**
+- [x] **Step 3: Verify file exists**
 
 Run: `ls css/styles.css`
 Expected: file listed
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add css/styles.css
@@ -167,11 +167,11 @@ git commit -m "feat: create shared CSS design system (glass-panel, circuit-bg, d
 **Files:**
 - Create: `js/main.js`
 
-- [ ] **Step 1: Create `js/` directory**
+- [x] **Step 1: Create `js/` directory**
 
 Run: `mkdir -p js`
 
-- [ ] **Step 2: Write `js/main.js`**
+- [x] **Step 2: Write `js/main.js`**
 
 ```javascript
 /* ===== Rakal — Shared Interactions ===== */
@@ -328,12 +328,12 @@ function initSmoothScroll() {
 }
 ```
 
-- [ ] **Step 3: Verify file exists**
+- [x] **Step 3: Verify file exists**
 
 Run: `ls js/main.js`
 Expected: file listed
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add js/main.js
@@ -349,7 +349,7 @@ git commit -m "feat: create shared JS (mobile drawer, FAQ accordion, navbar scro
 
 This task creates the HTML shell with `<head>`, Tailwind config, skip link, navbar (desktop + mobile), mobile drawer, and opening `<main>` tag. Subsequent tasks append sections inside `<main>`.
 
-- [ ] **Step 1: Write `index.html` with boilerplate, navbar, and drawer**
+- [x] **Step 1: Write `index.html` with boilerplate, navbar, and drawer**
 
 Write the complete file. The `<main>` tag is opened but only contains a placeholder comment. Sections will be added in subsequent tasks.
 
@@ -523,7 +523,7 @@ Write the complete file. The `<main>` tag is opened but only contains a placehol
 </html>
 ```
 
-- [ ] **Step 2: Open in browser and verify**
+- [x] **Step 2: Open in browser and verify**
 
 Open `index.html` in a browser. Verify:
 - Dark navy background
@@ -533,7 +533,7 @@ Open `index.html` in a browser. Verify:
 - Clicking overlay or pressing ESC closes drawer
 - Sadu diamond pattern barely visible in background
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add index.html
@@ -547,7 +547,7 @@ git commit -m "feat: index.html boilerplate with Tailwind config, navbar, mobile
 **Files:**
 - Modify: `index.html` — insert inside `<main>`, replacing the placeholder comment
 
-- [ ] **Step 1: Add hero section HTML**
+- [x] **Step 1: Add hero section HTML**
 
 Insert the following immediately after `<main class="pt-20">`, replacing the `<!-- SECTIONS WILL BE ADDED -->` comment:
 
@@ -614,7 +614,7 @@ Insert the following immediately after `<main class="pt-20">`, replacing the `<!
 </section>
 ```
 
-- [ ] **Step 2: Verify in browser**
+- [x] **Step 2: Verify in browser**
 
 - Hero fills ~90vh
 - Gold badge pill visible at top of text
@@ -624,7 +624,7 @@ Insert the following immediately after `<main class="pt-20">`, replacing the `<!
 - Image hidden on mobile
 - Floating badges animate (slow bounce on gold sparkle)
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add index.html
@@ -638,7 +638,7 @@ git commit -m "feat: add hero section with dual CTA, floating badges, Riyadh sky
 **Files:**
 - Modify: `index.html` — insert after hero section, before `</main>`
 
-- [ ] **Step 1: Add stats section HTML**
+- [x] **Step 1: Add stats section HTML**
 
 Insert after the closing `</section>` of hero:
 
@@ -675,14 +675,14 @@ Insert after the closing `</section>` of hero:
 </section>
 ```
 
-- [ ] **Step 2: Verify in browser**
+- [x] **Step 2: Verify in browser**
 
 - 4 stat cards in a row on desktop, 2x2 on mobile
 - Gold triangle accent barely visible in background
 - Icons alternate gold/cyan colors
 - Arabic numerals display correctly
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add index.html
@@ -696,7 +696,7 @@ git commit -m "feat: add stats bar section with 4 stat cards"
 **Files:**
 - Modify: `index.html` — insert after stats section
 
-- [ ] **Step 1: Add services section HTML**
+- [x] **Step 1: Add services section HTML**
 
 Insert after stats section:
 
@@ -768,7 +768,7 @@ Insert after stats section:
 </section>
 ```
 
-- [ ] **Step 2: Verify in browser**
+- [x] **Step 2: Verify in browser**
 
 - Bento grid: Row 1 = [2-col][1-col][1-col], Row 2 = [1-col][2-col][1-col]
 - Glass panel effect on cards
@@ -776,7 +776,7 @@ Insert after stats section:
 - Hover changes border color (cyan or gold alternating)
 - Single column on mobile
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add index.html
@@ -790,7 +790,7 @@ git commit -m "feat: add services overview bento grid with 6 service cards"
 **Files:**
 - Modify: `index.html` — insert after services section
 
-- [ ] **Step 1: Add industries section HTML**
+- [x] **Step 1: Add industries section HTML**
 
 ```html
 <!-- Industries / Sectors -->
@@ -866,7 +866,7 @@ git commit -m "feat: add services overview bento grid with 6 service cards"
 </section>
 ```
 
-- [ ] **Step 2: Add process section HTML**
+- [x] **Step 2: Add process section HTML**
 
 ```html
 <!-- Process / Workflow -->
@@ -995,7 +995,7 @@ git commit -m "feat: add services overview bento grid with 6 service cards"
 </section>
 ```
 
-- [ ] **Step 3: Verify in browser**
+- [x] **Step 3: Verify in browser**
 
 Industries:
 - 5 columns on desktop, 2 on mobile
@@ -1008,7 +1008,7 @@ Process:
 - Vertical timeline on mobile
 - Arabic numerals in circles
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add index.html
@@ -1022,7 +1022,7 @@ git commit -m "feat: add industries grid (10 sectors) and process timeline (6 st
 **Files:**
 - Modify: `index.html` — insert after process section
 
-- [ ] **Step 1: Add saudi market value section HTML**
+- [x] **Step 1: Add saudi market value section HTML**
 
 ```html
 <!-- Saudi Market Value -->
@@ -1101,7 +1101,7 @@ git commit -m "feat: add industries grid (10 sectors) and process timeline (6 st
 </section>
 ```
 
-- [ ] **Step 2: Verify in browser**
+- [x] **Step 2: Verify in browser**
 
 - 2-column layout on desktop (text right, image left in RTL)
 - Gold underline under heading
@@ -1110,7 +1110,7 @@ git commit -m "feat: add industries grid (10 sectors) and process timeline (6 st
 - Image has gold offset border behind it
 - Single column on mobile (text first, image below)
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add index.html
@@ -1124,7 +1124,7 @@ git commit -m "feat: add Saudi market value section with 5 business value items"
 **Files:**
 - Modify: `index.html` — insert after value section
 
-- [ ] **Step 1: Add trust section HTML**
+- [x] **Step 1: Add trust section HTML**
 
 ```html
 <!-- Trust / Why Trust Us -->
@@ -1184,7 +1184,7 @@ git commit -m "feat: add Saudi market value section with 5 business value items"
 </section>
 ```
 
-- [ ] **Step 2: Verify in browser**
+- [x] **Step 2: Verify in browser**
 
 - 3 columns on desktop, single column on mobile
 - 6 trust cards total
@@ -1192,7 +1192,7 @@ git commit -m "feat: add Saudi market value section with 5 business value items"
 - Last 3 cards: gold icon backgrounds
 - Cards have rounded corners and subtle hover border
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add index.html
@@ -1206,7 +1206,7 @@ git commit -m "feat: add trust section with 6 commitment cards (no fake testimon
 **Files:**
 - Modify: `index.html` — insert after trust section
 
-- [ ] **Step 1: Add FAQ section HTML**
+- [x] **Step 1: Add FAQ section HTML**
 
 ```html
 <!-- FAQ Section -->
@@ -1282,7 +1282,7 @@ git commit -m "feat: add trust section with 6 commitment cards (no fake testimon
 </section>
 ```
 
-- [ ] **Step 2: Verify in browser**
+- [x] **Step 2: Verify in browser**
 
 - 6 FAQ items stacked vertically
 - Clicking a question expands its answer (smooth transition)
@@ -1290,7 +1290,7 @@ git commit -m "feat: add trust section with 6 commitment cards (no fake testimon
 - Expand icon rotates 180deg when open
 - Question text highlights cyan on hover
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add index.html
@@ -1304,7 +1304,7 @@ git commit -m "feat: add FAQ accordion section with 6 questions"
 **Files:**
 - Modify: `index.html` — insert CTA after FAQ, then footer after `</main>`
 
-- [ ] **Step 1: Add CTA block HTML**
+- [x] **Step 1: Add CTA block HTML**
 
 Replace the existing `</main>` tag with the following CTA section + closing `</main>` tag + footer. The result is: FAQ section → CTA section → `</main>` → footer → `</body>`.
 
@@ -1333,7 +1333,7 @@ Insert the CTA immediately before `</main>`, replacing `</main>` with:
 </section>
 ```
 
-- [ ] **Step 2: Add footer HTML after `</main>`**
+- [x] **Step 2: Add footer HTML after `</main>`**
 
 The CTA section above ends inside `<main>`. The `</main>` closing tag should come right after it, then the footer. The full sequence at the bottom of the file should be: `...CTA section...</section></main><footer>...</footer><script src="js/main.js"></script></body></html>`. Add this footer immediately after `</main>`:
 
@@ -1406,11 +1406,11 @@ The CTA section above ends inside `<main>`. The `</main>` closing tag should com
 </footer>
 ```
 
-- [ ] **Step 3: Verify there is exactly one `</main>` tag**
+- [x] **Step 3: Verify there is exactly one `</main>` tag**
 
 Search the file for `</main>`. There must be exactly one, positioned after the CTA section and before the footer. If Task 3's original `</main>` is still present, remove the duplicate.
 
-- [ ] **Step 4: Verify in browser**
+- [x] **Step 4: Verify in browser**
 
 CTA:
 - Rounded card with gradient background
@@ -1428,7 +1428,7 @@ Footer:
 - Bottom bar with copyright and legal links
 - Single column on mobile
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add index.html
@@ -1444,49 +1444,49 @@ git commit -m "feat: add CTA block and footer with newsletter, links, social ico
 
 This task is a full verification pass. Open `index.html` in a browser and check every item below. Fix any issues found.
 
-- [ ] **Step 1: Desktop verification (1024px+ viewport)**
+- [x] **Step 1: Desktop verification (1024px+ viewport)**
 
 Check each section top to bottom:
-- [ ] Navbar: logo right, links center, CTA left, sticky on scroll, bg darkens on scroll
-- [ ] Hero: 2-column, gradient text, floating badges animate, both CTAs visible
-- [ ] Stats: 4 columns, gold/cyan alternating icons, Arabic numerals
-- [ ] Services: bento grid (2+1+1 / 1+2+1), glass effect, hover borders
-- [ ] Industries: 5 columns × 2 rows = 10 cards, hover lift
-- [ ] Process: horizontal timeline, gradient line, 6 steps, cyan→gold transition
-- [ ] Value: 2-column, image with gold offset border, 5 items with dividers
-- [ ] Trust: 3 columns × 2 rows, cyan row then gold row
-- [ ] FAQ: click to expand, one-at-a-time, icon rotates
-- [ ] CTA: gradient card, circuit overlay, 2 buttons
-- [ ] Footer: 4 columns, social icons, newsletter form, bottom bar
+- [x] Navbar: logo right, links center, CTA left, sticky on scroll, bg darkens on scroll
+- [x] Hero: 2-column, gradient text, floating badges animate, both CTAs visible
+- [x] Stats: 4 columns, gold/cyan alternating icons, Arabic numerals
+- [x] Services: bento grid (2+1+1 / 1+2+1), glass effect, hover borders
+- [x] Industries: 5 columns × 2 rows = 10 cards, hover lift
+- [x] Process: horizontal timeline, gradient line, 6 steps, cyan→gold transition
+- [x] Value: 2-column, image with gold offset border, 5 items with dividers
+- [x] Trust: 3 columns × 2 rows, cyan row then gold row
+- [x] FAQ: click to expand, one-at-a-time, icon rotates
+- [x] CTA: gradient card, circuit overlay, 2 buttons
+- [x] Footer: 4 columns, social icons, newsletter form, bottom bar
 
-- [ ] **Step 2: Mobile verification (375px viewport)**
+- [x] **Step 2: Mobile verification (375px viewport)**
 
-- [ ] Hamburger visible, opens drawer from right
-- [ ] Drawer: links stacked, CTA at bottom, close on overlay/ESC
-- [ ] Hero: single column, no image, buttons stack
-- [ ] Stats: 2×2 grid
-- [ ] Services: single column
-- [ ] Industries: 2 columns
-- [ ] Process: vertical timeline (not horizontal)
-- [ ] Value: single column (text first, image below)
-- [ ] Trust: single column
-- [ ] FAQ: full width, works correctly
-- [ ] Footer: single column
+- [x] Hamburger visible, opens drawer from right
+- [x] Drawer: links stacked, CTA at bottom, close on overlay/ESC
+- [x] Hero: single column, no image, buttons stack
+- [x] Stats: 2×2 grid
+- [x] Services: single column
+- [x] Industries: 2 columns
+- [x] Process: vertical timeline (not horizontal)
+- [x] Value: single column (text first, image below)
+- [x] Trust: single column
+- [x] FAQ: full width, works correctly
+- [x] Footer: single column
 
-- [ ] **Step 3: Accessibility checks**
+- [x] **Step 3: Accessibility checks**
 
-- [ ] Skip link appears on Tab press
-- [ ] FAQ buttons have aria-expanded
-- [ ] Drawer has role="dialog" and aria-modal
-- [ ] All decorative icons have aria-hidden="true"
-- [ ] Images have alt text in Arabic
-- [ ] Tab navigation works through all interactive elements
+- [x] Skip link appears on Tab press
+- [x] FAQ buttons have aria-expanded
+- [x] Drawer has role="dialog" and aria-modal
+- [x] All decorative icons have aria-hidden="true"
+- [x] Images have alt text in Arabic
+- [x] Tab navigation works through all interactive elements
 
-- [ ] **Step 4: Fix any issues found**
+- [x] **Step 4: Fix any issues found**
 
 Make targeted fixes. Do not restructure — only fix what's broken.
 
-- [ ] **Step 5: Final commit**
+- [x] **Step 5: Final commit**
 
 ```bash
 git add -A

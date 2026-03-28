@@ -1,10 +1,12 @@
-/* ===== Rakal — Shared Interactions ===== */
+/* ===== Rakal — Enhanced Interactions ===== */
 
 document.addEventListener('DOMContentLoaded', () => {
   initMobileDrawer();
   initFaqAccordion();
   initNavbarScroll();
   initSmoothScroll();
+  initScrollReveal();
+  initCounterAnimation();
 });
 
 /* --- Mobile Drawer --- */
@@ -110,17 +112,42 @@ function initFaqAccordion() {
   });
 }
 
-/* --- Navbar Scroll Effect --- */
+/* --- Navbar Scroll Effect with Hide/Show --- */
 function initNavbarScroll() {
   const navbar = document.getElementById('navbar');
   if (!navbar) return;
 
+  let lastScroll = 0;
+  let ticking = false;
+
   function onScroll() {
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
+    if (ticking) return;
+    ticking = true;
+
+    requestAnimationFrame(() => {
+      const currentScroll = window.scrollY;
+
+      // Add scrolled class for bg change
+      if (currentScroll > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+
+      // Hide/show navbar on scroll direction
+      if (currentScroll > 400) {
+        if (currentScroll > lastScroll + 5) {
+          navbar.classList.add('nav-hidden');
+        } else if (currentScroll < lastScroll - 5) {
+          navbar.classList.remove('nav-hidden');
+        }
+      } else {
+        navbar.classList.remove('nav-hidden');
+      }
+
+      lastScroll = currentScroll;
+      ticking = false;
+    });
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
@@ -140,4 +167,67 @@ function initSmoothScroll() {
       }
     });
   });
+}
+
+/* --- Scroll Reveal (Intersection Observer) --- */
+function initScrollReveal() {
+  const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+  if (!revealElements.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -60px 0px'
+  });
+
+  revealElements.forEach(el => observer.observe(el));
+}
+
+/* --- Counter Animation for Stats --- */
+function initCounterAnimation() {
+  const counters = document.querySelectorAll('[data-count]');
+  if (!counters.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(el => observer.observe(el));
+}
+
+function animateCounter(el) {
+  const target = parseInt(el.getAttribute('data-count'), 10);
+  const prefix = el.getAttribute('data-prefix') || '';
+  const suffix = el.getAttribute('data-suffix') || '';
+  const isArabic = el.getAttribute('data-arabic') === 'true';
+  const duration = 1500;
+  const start = performance.now();
+
+  function toArabicNums(n) {
+    return n.toString().replace(/[0-9]/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
+  }
+
+  function update(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    // ease-out cubic
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = Math.round(target * eased);
+    const display = isArabic ? toArabicNums(current) : current;
+    el.textContent = prefix + display + suffix;
+    if (progress < 1) requestAnimationFrame(update);
+  }
+
+  requestAnimationFrame(update);
 }
